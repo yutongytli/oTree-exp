@@ -12,7 +12,7 @@ Your app description
 
 
 class Constants(BaseConstants):
-    name_in_url = 'majority_determine'
+    name_in_url = 'participant_generated_urn'
     players_per_group = 4
     num_rounds = 1
 
