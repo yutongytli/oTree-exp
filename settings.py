@@ -120,13 +120,13 @@ SESSION_CONFIGS = [
         'name': 'participant_generate',
         'display_name': 'Participant Generate Urn Game w/o Timer',
         'num_demo_participants': 10,
-        'app_sequence': ['participant_generate_urn'],
+        'app_sequence': ['participant_generated_urn'],
     },
     {
         'name': 'participant_generate',
         'display_name': 'Participant Generate Urn Game w/ Timer',
         'num_demo_participants': 10,
-        'app_sequence': ['participant_generate_urn_2'],
+        'app_sequence': ['participant_generated_urn_2'],
     },
     {
         'name': 'erase',
