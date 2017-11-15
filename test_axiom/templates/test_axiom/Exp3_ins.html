@@ -1,0 +1,29 @@
+{% load otree_tags staticfiles %}
+
+<div class="instructions well well-lg">
+
+    <h3 class="panel-sub-heading">
+        Instructions
+    </h3>
+
+    <p>
+        In experiment 3 you will choose one of two options. In both options your payoff depends on the result of a random
+        draw from a drum filled with balls and some unknown amount of $X.
+    </p>
+    <p>
+        We will conduct a single draw. The drum will be filled with <strong>20 red balls</strong> and <strong>40 white and black balls</strong>.
+        The 20 red balls are added for sure but the 40 white and black balls may be any combination of black and white balls. For example, the
+        drum could contain 20 red balls, 7 black balls and 33 white balls, or it could contain 20 red balls, 40 black balls, or 20 red balls
+        12 white balls and 28 black balls, or...That is to say, the sum of white and black balls in the drum is exactly 40, and the number of red balls in the drum is 20.
+        The whole process will be done by the computer.
+    </p>
+    <p>
+        Before it starts, you need to choose one of the envelopes. Each envelope contains a random number from 0 to
+        1. These numbers are 0.00, 0.05, 0.10, 0.15, ... , 0.95, 1.00. So there are 21
+        possible numbers and they have equal probability. <strong>These numbers are randomly preselected by the computer
+        and will remain the same all through the experiment.</strong>.
+        Once experiment 3 is over, we will give you a password to open your envelope on the third-party website:
+        <a href="{{ link }}" target=_blank>https://www.browserling.com/tools/aes-decrypt</a>. Then you can get your result.
+    </p>
+
+</div>

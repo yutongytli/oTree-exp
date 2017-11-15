@@ -1,0 +1,113 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Mouse tracking results
+{% endblock %}
+
+{% block content %}
+
+	<div id="container" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
+
+    {% next_button %}
+{% endblock %}
+
+{% block styles %}
+
+	<style type="text/css">
+		#container {
+   			background:url(http://print-ables.com/dots/dinosaur.jpg) 0% 0%;
+   			background-size:cover;
+
+   			margin-bottom: 4em;
+		}
+	</style>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <script>
+
+
+
+	    $(function () {
+		    $(document).ready(function() {
+		        Highcharts.setOptions({
+		            global: {
+		                useUTC: false
+		            }
+		        });
+		    
+		        var chart;
+		        var data_x = {{ mouse_x }};
+		        var data_y = {{ mouse_y }};
+
+		        var i = 0;
+			
+
+		        $('#container').highcharts({
+		            chart: {
+		                type: 'scatter',
+		                backgroundColor: 'rgba(0,0,0,0)',
+		                animation: Highcharts.svg, // don't animate in old IE
+		                marginRight: 10,
+		                events: {
+		                    load: function() {
+		    
+		                        // set up the updating of the chart each second
+		                        var chart = this;
+		                        var series1 = this.series[0];
+		                      
+	                            setInterval(function() {
+	                            	x = data_x[i];
+	                        		y = data_y[i];
+		                            
+		                            series1.addPoint([x, y], true, false);
+		                            
+		                            
+		                            i = i + 1;
+		                            console.log("Update graph");
+		                        }, 10);			
+		                    }
+		                }
+		            },
+		            title: {
+		                text: ''
+		            },
+		            xAxis: {
+			        	title: {
+			            	enabled: true,
+			            	text: 'X'
+			        	},
+			        	startOnTick: true,
+				        endOnTick: true,
+				        showLastLabel: true,
+				        min: 0,
+				        max: 1024
+			    	},
+		            yAxis: {
+			        	title: {
+			           		text: 'Y'
+			        	},
+			        	min: 0,
+				        max: 1024
+			    	},
+		            tooltip: {
+			                headerFormat: '<b>{series.name}</b><br>',
+			                pointFormat: 'x: {point.x}, y: {point.y}'
+			        },
+		            legend: {
+		                enabled: false
+		            },
+		            exporting: {
+		                enabled: false
+		            },
+		            series: {{ series }}
+		        });
+		    });
+		});
+    </script>
+
+{% endblock %}

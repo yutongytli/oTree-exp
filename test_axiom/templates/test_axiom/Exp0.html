@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Practice Session
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        The 21 "virtual envelopes", i.e. 21 messages which contain the encrypted information, are listed below. Please choose one of them. <br>
+        On the next page, we will give you a password to "open the envelope", i.e. to decrypt your message on the third party website.
+    </p>
+    <p>
+        <I>You can save your choice by copy-pasting your choice in a separate part of your computer if you want. However, we will also save this for you.</I>
+    </p>
+
+    {% formfield player.x_0 with label=prompt %}
+
+    {% next_button %}
+
+{% endblock %}

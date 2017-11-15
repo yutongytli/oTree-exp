@@ -1,0 +1,49 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Questionnaire - Part Two
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Please answer the following questions.
+    </p>
+{% if order == 1 %}
+    {% formfield player.q1 with label='A doctor gives you 3 pills, and tell you to take 1 pill every 30 minutes starting right away. After how many minutes will you run out of pills' %}
+
+    {% formfield player.q2 with label='A meal, including a beverage costs $12 in total. The food costs 5 times as much as the beverage. How much does the food cost' %}
+
+    {% formfield player.q3 with label='A population of a town halves every month due to a plague. 1000 people are still alive after 10 months. After how many months were 2000 people alive' %}
+{% elif order == 2 %}
+    {% formfield player.q1 with label='A doctor gives you 3 pills, and tell you to take 1 pill every 30 minutes starting right away. After how many minutes will you run out of pills' %}
+
+        {% formfield player.q3 with label='A population of a town halves every month due to a plague. 1000 people are still alive after 10 months. After how many months were 2000 people alive' %}
+
+    {% formfield player.q2 with label='A meal, including a beverage costs $12 in total. The food costs 5 times as much as the beverage. How much does the food cost' %}
+
+    {% elif order == 3 %}
+        {% formfield player.q2 with label='A meal, including a beverage costs $12 in total. The food costs 5 times as much as the beverage. How much does the food cost' %}
+
+        {% formfield player.q1 with label='A doctor gives you 3 pills, and tell you to take 1 pill every 30 minutes starting right away. After how many minutes will you run out of pills' %}
+
+    {% formfield player.q3 with label='A population of a town halves every month due to a plague. 1000 people are still alive after 10 months. After how many months were 2000 people alive' %}
+{% elif order == 4 %}
+        {% formfield player.q2 with label='A meal, including a beverage costs $12 in total. The food costs 5 times as much as the beverage. How much does the food cost' %}
+    {% formfield player.q3 with label='A population of a town halves every month due to a plague. 1000 people are still alive after 10 months. After how many months were 2000 people alive' %}
+        {% formfield player.q1 with label='A doctor gives you 3 pills, and tell you to take 1 pill every 30 minutes starting right away. After how many minutes will you run out of pills' %}
+{% elif order == 5 %}
+        {% formfield player.q3 with label='A population of a town halves every month due to a plague. 1000 people are still alive after 10 months. After how many months were 2000 people alive' %}
+        {% formfield player.q1 with label='A doctor gives you 3 pills, and tell you to take 1 pill every 30 minutes starting right away. After how many minutes will you run out of pills' %}
+        {% formfield player.q2 with label='A meal, including a beverage costs $12 in total. The food costs 5 times as much as the beverage. How much does the food cost' %}
+{% else %}
+            {% formfield player.q3 with label='A population of a town halves every month due to a plague. 1000 people are still alive after 10 months. After how many months were 2000 people alive' %}
+            {% formfield player.q2 with label='A meal, including a beverage costs $12 in total. The food costs 5 times as much as the beverage. How much does the food cost' %}
+    {% formfield player.q1 with label='A doctor gives you 3 pills, and tell you to take 1 pill every 30 minutes starting right away. After how many minutes will you run out of pills' %}
+
+    {% endif %}
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Petition
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Here is an overview of your answers to the issues mentioned in this study.<br>
+        <strong>Would you be interested in voicing your concerns through social media on one issue or more? If so,
+            let us know by checking all that apply.</strong>
+    </p>
+    <p>
+        You will be directed to a page with links to petitions that align with your own policy position,
+        feel free to share these links with your friends!
+    </p>
+
+        <table class="table table-hover">
+
+            <tr><td width="30%" align="center"><strong>Issue</strong></td>
+                <td width="10%" align="center"><strong>Your Answer</strong></td>
+            <td width="5%" align="center"><strong>Choice</strong></td>
+            </tr>
+
+        {% for question, attitude, petition in list %}
+
+            <tr><td width="30%" align="left">{{ question }}</td>
+                <td width="10%" align="center">{{ attitude }}</td>
+            <td width="5%" align="center">
+                <input type="radio" name="{{ petition }}" value="True">
+            </td>
+            </tr>
+
+        {% endfor %}
+
+
+        </table>
+
+    <p>
+        <strong><I>If you are not interested, please move to the next page.</I></strong>
+    </p>
+
+
+    {% next_button %}
+
+{% endblock %}

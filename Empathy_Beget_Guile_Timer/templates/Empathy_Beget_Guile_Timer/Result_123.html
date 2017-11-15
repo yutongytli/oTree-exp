@@ -1,0 +1,74 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Your Result
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Your payoff for Task 2 is: <strong>$0.80</strong>.
+    </p>
+
+{% if player.is_4 == 1 and not player.outofthegame %}
+
+    <p>
+        Your payoff for Task 3 is: <strong>$0.40</strong>.
+    </p>
+    <p>
+        Your total payoff is: <strong>{{ player.payoff }}</strong>.
+    </p>
+    <p>
+        <strong>Thank you for your participation!</strong>
+    </p>
+
+{% elif player.is_4 == 0 and not player.outofthegame %}
+
+    {% if player.role == 'Player 1' %}
+    <p>
+        In task 3, you are Player 1, you chose to send <strong>{{player.message}}</strong>.<br>
+        Your counterpart chose <strong>{{player.other_player.option_AB}}</strong>.
+    </p>
+    <p>
+        Your payoff for Task 3 is: <strong>{{task2}}</strong>.
+    </p>
+    <p>
+        Your total payoff is: <strong>{{ player.payoff }}</strong>.
+    </p>
+    <p>
+        <strong>Thank you for your participation!</strong>
+    </p>
+
+    {% else %}
+    <p>
+        In task 3, you are Player 2.
+        You chose <strong>{{player.option_AB}}</strong>.
+    </p>
+    <p>
+        Your payoff for Task 3 is: <strong>{{task2}}</strong>.
+    </p>
+    <p>
+        Your total payoff is: <strong>{{ player.payoff }}</strong>.
+    </p>
+    <p>
+        <strong>Thank you for your participation!</strong>
+    </p>
+    {% endif %}
+
+    {% elif player.outofthegame %}
+    <p>
+        Your extra bonus for waiting is: <strong>{{ player.bonus_wait }}</strong>
+    </p>
+    <p>
+        Your total payoff is: <strong>{{ money_o }}</strong>.
+    </p>
+    <p>
+        <strong>Thank you for your participation!</strong>
+    </p>
+
+{% endif %}
+
+    {% next_button %}
+
+{% endblock %}

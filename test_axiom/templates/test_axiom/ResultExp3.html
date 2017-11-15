@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Experiment 3 - Your Payoff
+{% endblock %}
+
+{% block content %}
+
+    <div style="text-align:center">
+        <img src="{% static "test_axiom/exp3.png" %}" align="middle" height="220" width="800"/>
+    </div>
+
+    <p>
+    {% if player.random_draw == 0 %}
+        For this number (X), you take {{ option }}.<br>
+    {% else %}
+        For this number (X), you are indifferent with Option A and Option B. So {{ option }} is randomly assigned to you. <br>
+    {% endif %}
+        The ball drawn from the drum is: <strong>{{ result }} ball</strong>.<br>
+        Your payoff for Experiment 3 is: <strong>{{ payoff }}</strong>.
+    </p>
+
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block content %}
+
+    {% if player.treatment == 'polarized' %}
+
+    <p>
+        Opinion polls show that Republicans and Democrats usually disagree on many policy issues. The partisan divide
+        is stark: when one party supports a given policy, the other party opposes it. The reverse is also true: when
+        one party opposes a given policy, the other party supports it.
+    </p>
+    <div style="text-align:center">
+        <img src="{% static "pilot2_1/polarized.png" %}" align="middle" />
+    </div>
+            <p>
+    <br>
+    </p>
+    <p>
+        We are interested in learning what you think about some of these policy issues.
+    </p>
+    <p>
+    <strong>
+        Read the questions carefully: some may be difficult to answer if you are not paying attention.
+        Pick the answers that best capture your own point of view.
+    </strong>
+    </p>
+    <p>
+    <I>
+        <u>Important information</u>: This study is strictly confidential and your answers will be collected anonymously.
+    </I>
+    </p>
+
+    {% elif player.treatment == 'depolarized' %}
+        <p>
+        Against common expectations, there is good evidence that Republicans and Democrats agree on many policy issues.
+            Overall, the partisan divide is not has big as one might think: on many issues, supporters of each party
+            can be found on both sides:
+        </p>
+        <div style="text-align:center">
+        <img src="{% static "pilot2_1/de-polarized.png" %}" align="middle" />
+        </div>
+            <p>
+    <br>
+    </p>
+        <p>
+        We are interested in learning what you think about some of these policy issues.
+        </p>
+        <p>
+        <strong>
+            Read the questions carefully: some may be difficult to answer if you are not paying attention.
+            Pick the answers that best capture your own point of view.
+        </strong>
+        </p>
+        <p>
+        <I>
+            <u>Important information</u>: This study is strictly confidential and your answers will be collected anonymously.
+        </I>
+        </p>
+    {% else %}
+
+    <p>
+        We are interested in learning what you think about politics and policy issues.
+    </p>
+    <p>
+    <strong>
+        Read the questions carefully: some may be difficult to answer if you are not paying attention. Pick the answers that best capture your own point of view.
+    </strong>
+    </p>
+    <p>
+    <I>
+        <u>Important information</u>: This study is strictly confidential and your answers will be collected anonymously.
+    </I>
+    </p>
+    {% endif %}
+    <p>
+    <br>
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

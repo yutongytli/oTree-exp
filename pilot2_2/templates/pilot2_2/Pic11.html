@@ -1,0 +1,42 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    
+    <div style="text-align:center">
+        <img src="{% static "pilot2_2/divided.png" %}" align="middle" height="200" width="330"/>
+    </div>
+    <p>
+    <br>
+    </p>
+
+    <p>
+    According to a recent poll, a majority of Americans believe that the Republican and Democratic Parties do a very
+        poor job of representing the American people. The Founding Fathers were also very concerned about the dangers
+        of a two-party system. John Adams famously wrote:
+    </p>
+    <p>
+    <I>
+        "There is nothing which I dread so much as a division of the republic into two great parties, each arranged
+        under its leader, and concerting measures in opposition to each other. This, in my humble apprehension,
+        is to be dreaded as the greatest political evil under our Constitution."
+
+    </I>
+    </p>
+    <p>
+    Please take some time to think the effects of the current two-party system on democracy in America.
+    </p>
+    <p>
+    <strong>
+        In the space below, please write 3 or 4 things you find are especially concerned or frustrated about.
+    </strong>
+    </p>
+
+    {% formfield player.pic1 with label=prompt %}
+
+    {% next_button %}
+{% endblock %}

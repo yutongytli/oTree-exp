@@ -1,0 +1,71 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Part Two - Question 4 / 10
+{% endblock %}
+
+{% block content %}
+
+    {% include 'REMT/IC0.html' %}
+
+        <div align="center" style="margin-bottom: 50px">
+                <img src="{% static image %}" style="width: 450px; height: 170px"/>
+        </div>
+    <div style="margin-bottom: 20px; margin-left: 50px">
+    You selected: <strong><span style="font-size: large">{{ ans }}</span></strong> as the emotion that best describes the eyes on this photo.
+    </div>
+    <div style="margin-bottom: 20px; margin-left: 50px">
+        <strong>How confident are you that the person on this photo actually experienced this emotion?</strong>
+    </div>
+
+            <table class="table table-hover">
+
+        <tr>
+            <td width="10%" align="right"></td>
+            <td width="4%" align="center">1</td>
+            <td width="4%" align="center">2</td>
+            <td width="4%" align="center">3</td>
+            <td width="4%" align="center">4</td>
+            <td width="4%" align="center">5</td>
+            <td width="4%" align="center">6</td>
+            <td width="4%" align="center">7</td>
+            <td width="4%" align="center">8</td>
+            <td width="4%" align="center">9</td>
+            <td width="4%" align="center">10</td>
+            <td width="10%" align="left"></td>
+        </tr>
+
+        <tr>
+        <td width="10%" align="right">Not confident at all</td>
+
+        <td width="4%" align="center">
+            <input type="radio" name="C4" value=1></td>
+        <td width="4%" align="center">
+            <input type="radio" name="C4" value=2></td>
+        <td width="4%" align="center">
+            <input type="radio" name="C4" value=3></td>
+        <td width="4%" align="center">
+            <input type="radio" name="C4" value=4></td>
+        <td width="4%" align="center">
+            <input type="radio" name="C4" value=5></td>
+        <td width="4%" align="center">
+            <input type="radio" name="C4" value=6></td>
+        <td width="4%" align="center">
+            <input type="radio" name="C4" value=7></td>
+        <td width="4%" align="center">
+            <input type="radio" name="C4" value=8></td>
+        <td width="4%" align="center">
+            <input type="radio" name="C4" value=9></td>
+        <td width="4%" align="center">
+            <input type="radio" name="C4" value=10></td>
+
+        <td width="10%" align="left">Very confident</td>
+        </tr>
+        </table>
+
+<div align="right" style="margin: 5em 5em">
+    {% next_button %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Practice Session - Check Your Result
+{% endblock %}
+
+{% block content %}
+
+
+    <p>
+    <br>
+    </p>
+
+    <p>
+        The envelope you chose is: <div style="text-align:center"><strong>{{ message }}</strong></div>
+    </p>
+    <p>
+        "Open" your envelope on the third party website: <a href="{{ link }}" target=_blank>https://www.browserling.com/tools/aes-decrypt</a>
+    with the password:
+    </p>
+    <div style="text-align:center"><strong>wohenkaixin</strong></div>
+    <p>
+    <br>
+    </p>
+
+    {% formfield player.message0 with label="Please enter the encrypted information here" %}
+    {% next_button %}
+    <p>
+        <font color="red"><strong><u>If you are not sure where and how to decrypt it, please refer to the instructions below:</u></strong></font>
+    </p>
+    <hr/>
+    {% include 'test_axiom/Exp0_ins.html' %}
+
+
+{% endblock %}

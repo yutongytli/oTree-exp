@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Thank You!
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Your total payoff is: {{ player.payoff_1 }} + {{ player.payoff_2 }} + {{ player.payoff_3 }} = {{ total }}
+    </p>
+    <p>
+        <I>The above payoff will be reduced if what you entered does not match the encrypted information.</I>
+    </p>
+    {% if player.payoff == 0 %}
+    <p>
+        The participation fee for you is: $0.20.
+    </p>
+    {% endif %}
+    <p>
+        Thank you for your participation!
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <p>
+        Do you favor, oppose, or neither favor nor oppose <strong>{{ q_11 }}?</strong>
+    </p>
+
+    <table class="table-condensed" style="width:200px; margin-top:10px;">
+
+        {% for value1, content1 in mylist1 %}
+
+             <tr>
+             <td><input type="radio" name="answer_11" value={{ value1 }}></td>
+             <td> {{ content1 }}</td>
+             </tr>
+
+        {% endfor %}
+
+    </table>
+    <p>
+    <br>
+    </p>
+    <p>
+        How important is this issue to you personally?
+    </p>
+    <table class="table-condensed" style="width:200px; margin-top:10px;">
+
+        {% for value2, content2 in mylist2 %}
+
+             <tr>
+             <td><input type="radio" name="importance_11" value={{ value2 }}></td>
+             <td> {{ content2 }}</td>
+             </tr>
+
+        {% endfor %}
+
+    </table>
+    <p>
+    <br>
+    </p>
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Petition
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        <strong>Here is an overview of your answers to the issues mentioned in this study.</strong><br>
+        <strong>Which one would you like to sign a petition for?</strong>
+    </p>
+    <p>
+    <strong><I>If you refuse to sign a petition, please click "Next" to skip this page.</I></strong>
+    </p>
+
+            <table class="table table-hover">
+
+            <tr><td width="30%" align="center"><strong>Issue</strong></td>
+                <td width="10%" align="center"><strong>Your Answer</strong></td>
+            </tr>
+
+        {% for question, attitude in list %}
+
+            <tr><td width="30%" align="left">{{ question }}</td>
+                <td width="10%" align="center">{{ attitude }}</td>
+            </tr>
+
+        {% endfor %}
+
+             </table>
+
+    {% formfield player.petition with label='Please choose one of the buttons:' %}
+
+    <p>
+        <strong>We will give you further information through email.</strong>
+    </p>
+
+    {% formfield player.email_petition with label='Please leave us your email address:' %}
+
+
+    {% next_button %}
+
+{% endblock %}

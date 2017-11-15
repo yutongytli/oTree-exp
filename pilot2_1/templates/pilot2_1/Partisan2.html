@@ -1,0 +1,64 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+    {% if player.partisan_1 == 1 %}
+
+    <p>Do you think of yourself as CLOSER to the Republican Party or CLOSER to the Democratic party?</p>
+    <table class="table-condensed" style="width:300px; margin-top:10px;">
+
+        {% for value, content in mylist %}
+
+             <tr>
+             <td><input type="radio" name="partisan_2" value={{ value }}></td>
+             <td> {{ content }}</td>
+             </tr>
+
+        {% endfor %}
+
+    </table>
+
+    {% elif player.partisan_1 == 2 %}
+
+        <p>Would you call yourself a STRONG Republican or a NOT VERY STRONG Republican?</p>
+    <table class="table-condensed" style="width:200px; margin-top:10px;">
+
+             <tr>
+             <td><input type="radio" name="partisan_2" value=1></td>
+             <td>Strong</td>
+             </tr>
+            <tr>
+             <td><input type="radio" name="partisan_2" value=2></td>
+             <td>Not very strong</td>
+             </tr>
+
+    </table>
+
+        {% else %}
+
+       <p>Would you call yourself a STRONG Republican or a NOT VERY STRONG Republican?</p>
+    <table class="table-condensed" style="width:200px; margin-top:10px;">
+
+             <tr>
+             <td><input type="radio" name="partisan_2" value=1></td>
+             <td>Strong</td>
+             </tr>
+            <tr>
+             <td><input type="radio" name="partisan_2" value=2></td>
+             <td>Not very strong</td>
+             </tr>
+
+    </table>
+    {% endif %}
+    <p>
+    <br>
+    </p>
+
+    {% next_button %}
+    
+{% endblock %}

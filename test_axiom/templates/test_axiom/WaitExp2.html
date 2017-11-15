@@ -1,0 +1,42 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Please Wait!
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        <strong>Now we are going to open the envelope on the third-party website.</strong>
+    </p>
+    <p>
+        <strong>You will be forwarded automatically onto the next page once we've done.</strong>
+    </p>
+    <p>
+    <br>
+    </p>
+    <p>
+    <br>
+    </p>
+    <hr />
+    <p>
+        You can still go to the website: <a href="{{ link }}" target=_blank>https://www.browserling.com/tools/aes-decrypt</a> to check your result with the password:
+    </p>
+    <div style="text-align:center"><strong>tianqihaore17</strong></div>
+
+    <p>
+        Your envelope: <div style="text-align:center"><strong>{{ message }}</strong></div>
+    </p>
+
+{% endblock %}
+
+{% block styles %}
+  <style type="text/css">
+
+      div#otree-timeout {
+
+          display: none!important;
+    }
+  </style>
+{% endblock %}

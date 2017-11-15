@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+
+{% block content %}
+
+    <p>
+    Next, we need to know how you usually access the internet.  In this case, however, we want to check that people
+        take the time they need to read the instructions. To show that you’ve read carefully, please ignore the
+        question below and simply select the response category "I do not have access to the internet" to move on to the next question.
+    </p>
+    <p>
+    How do you usually access the internet?
+    </p>
+
+    <table class="table-condensed" style="width:400px; margin-top:10px;">
+
+        {% for value, content in mylist %}
+
+             <tr>
+             <td><input type="radio" name="internet_1" value={{ value }}></td>
+             <td> {{ content }}</td>
+             </tr>
+
+        {% endfor %}
+
+    </table>
+    <p>
+    <br>
+    </p>
+
+    {% next_button %}
+{% endblock %}

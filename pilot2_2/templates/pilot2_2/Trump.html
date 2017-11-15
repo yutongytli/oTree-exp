@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <p>
+About what percentage of Americans approve of the way that Donald J. Trump is handling his job as President?<br>
+        If you are not entirely sure which answer is correct, please take your best guess.
+    </p>
+
+    {% formfield player.trump with label=prompt %}
+
+
+    {% next_button %}
+
+{% endblock %}
+
+
+
+

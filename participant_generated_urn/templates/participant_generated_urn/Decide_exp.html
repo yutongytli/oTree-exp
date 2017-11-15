@@ -1,0 +1,132 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Your Decision
+{% endblock %}
+
+{% block content %}
+
+    {% include 'participant_generated_urn/Instructions.html' %}
+    <p>
+        Now please consider the following four different bets. These, and thus your possible earnings, depend on the
+        throw of the standard coin and the symbol coin, that is the choices of the other participants.
+    </p>
+    <p>
+        Please specify for each bet what you think its value is. In other words, if you could buy the bet, how much
+        would you maximally pay for it? Please enter a value between 0 and 400 Cents without entering a currency symbol.
+    </p>
+    <p>
+        You are not buying these bet, instead you will receive the bet for which you indicated the highest value, for
+        free (if you assign the same highest value to two or more bets, the bet which is listed first below is what you
+        will get). As soon as all participants have made their choice for ♡ or ☺︎, and have given her valuation for the
+        different bets, the session continues as follows: The computer generates the coin throws, a single coin throw
+        for all participants for the standard coin, and for the symbol coin for each participant individually.
+        Depending on the combination of the two throws then you personally either win 400 Cents or nothing.
+    </p>
+    <p>
+        While everything in the experiment is anonymous, there is one exception. On the next screen, we will show you
+        and all other participants the choices regarding the symbols. The participants will be identified by their
+        seat number.
+    </p>
+
+    <div class="row">
+        <div class="col-md-7 col-md-offset-2">
+            <table class="table table-hover">
+                <tr>
+                    <th>Option 1</th>
+                    <th>Head</th>
+                    <th>Tail</th>
+                </tr>
+                <tr>
+                    <th>♡</th>
+                    <td>EUR 0</td>
+                    <td>EUR 4</td>
+                </tr>
+                <tr>
+                    <th>☺</th>
+                    <td>EUR 0</td>
+                    <td>EUR 4</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    {% formfield player.option1 with label='How much would you pay for Option 1?' %}
+
+    <div class="row">
+        <div class="col-md-7 col-md-offset-2">
+            <table class="table table-hover">
+                <tr>
+                    <th>Option 2</th>
+                    <th>Head</th>
+                    <th>Tail</th>
+                </tr>
+                <tr>
+                    <th>♡</th>
+                    <td>EUR 4</td>
+                    <td>EUR 0</td>
+                </tr>
+                <tr>
+                    <th>☺</th>
+                    <td>EUR 4</td>
+                    <td>EUR 0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    {% formfield player.option2 with label='How much would you pay for Option 2?' %}
+
+    <div class="row">
+        <div class="col-md-7 col-md-offset-2">
+            <table class="table table-hover">
+                <tr>
+                    <th>Option 3</th>
+                    <th>Head</th>
+                    <th>Tail</th>
+                </tr>
+                <tr>
+                    <th>♡</th>
+                    <td>EUR 0</td>
+                    <td>EUR 0</td>
+                </tr>
+                <tr>
+                    <th>☺</th>
+                    <td>EUR 4</td>
+                    <td>EUR 4</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    {% formfield player.option3 with label='How much would you pay for Option 3?' %}
+
+    <div class="row">
+        <div class="col-md-7 col-md-offset-2">
+            <table class="table table-hover">
+                <tr>
+                    <th>Option 4</th>
+                    <th>Head</th>
+                    <th>Tail</th>
+                </tr>
+                <tr>
+                    <th>♡</th>
+                    <td>EUR 4</td>
+                    <td>EUR 4</td>
+                </tr>
+                <tr>
+                    <th>☺</th>
+                    <td>EUR 0</td>
+                    <td>EUR 0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    {% formfield player.option4 with label='How much would you pay for Option 4?' %}
+
+    {% next_button %}
+
+
+{% endblock %}

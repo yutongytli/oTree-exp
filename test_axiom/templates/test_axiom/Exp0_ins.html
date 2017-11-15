@@ -1,0 +1,30 @@
+{% load otree_tags staticfiles %}
+
+<div class="instructions well well-lg">
+    <h3 class="panel-sub-heading">
+        Instructions - An example
+    </h3>
+    <p>
+        <br>
+    </p>
+
+    <p>
+        To "open" the envelope you chose, please follow the three steps:
+    </p>
+    <p>
+        <strong>Step 1:</strong> Go to the third party website: <a href="{{ link }}" target=_blank>https://www.browserling.com/tools/aes-decrypt</a>
+    </p>
+    <p>
+        <strong>Step 2:</strong> Enter the envelope (say "<I><U>U2FsdGVkX1+8FpVab/1AAEADz4ap/LEb54cczFNKB+w=</U></I>"), the password (say "<I><U>wobukaixin</U></I>") and click "AES Decrypt!".
+    </p>
+    <div style="text-align:center">
+        <img src="{% static "test_axiom/decrypt.png" %}" align="middle" height="450" width="500"/>
+    </div>
+    <p>
+        <strong>Step 3:</strong> Get your result: the encrypted information in this case is "<I><U>Hello World</U></I>"
+    </p>
+    <div style="text-align:center">
+        <img src="{% static "test_axiom/result.png" %}" align="middle" height="450" width="500"/>
+    </div>
+
+</div>

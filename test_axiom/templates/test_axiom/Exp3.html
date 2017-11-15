@@ -1,0 +1,71 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Experiment 3
+{% endblock %}
+
+{% block content %}
+
+    {% include 'test_axiom/Exp3_ins.html' %}
+    <p>
+        <I>You can save your choice by copy-pasting your choice in a separate part of your computer if you want.
+            However, we will also save this for you.</I>
+    </p>
+
+{#    <p>#}
+{#        The message for you is: <div style="text-align:center"><strong>{{ message }}</strong></div>#}
+{#    </p>#}
+    {% formfield player.x_3 with label="Now please choose one envelope from the list" %}
+
+    <hr/>
+    <p>
+        Here is the information for "Option A" and "Option B":
+    </p>
+
+    <div style="text-align:center">
+    <img src="{% static "test_axiom/exp3.png" %}" align="middle" height="250" width="800"/>
+    </div>
+    <p>
+    <br>
+    </p>
+    <p>
+        Please give us instructions, for each possible value of X your envelope may contain, whether you want "Option A" or "Option B".
+    Do so by choosing the option you prefer for every possible value of X (so click exactly one radio button in each of
+    the 21 rows). If you are indifferent, you will get the payoff from "Option A" or "Option B" - it will be randomly determined
+    which one by the computer.
+    </p>
+    <p>
+    <br>
+    </p>
+
+        <table class="table table-hover">
+
+            <tr><td width="10%" align="center"><strong>If X is...</strong></td>
+            <td width="10%" align="center"><strong>...I want Option A</strong></td>
+            <td width="10%" align="center"><strong>...I want Option B</strong></td>
+            <td width="10%" align="center"><strong>...I am indifferent</strong></td>
+            </tr>
+
+        {% for dollar, name in list %}
+
+            <tr><td width="10%" align="center">{{ dollar }}</td>
+
+                {% for value in values %}
+            <td width="10%" align="center">
+                <input type="radio" name="{{ name }}" value={{ value }}>
+            </td>
+                {% endfor %}
+            </tr>
+
+        {% endfor %}
+
+        </table>
+
+    <p>
+        Note: This question does not have a "correct" answer, so just think row by row which option you feel is better.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

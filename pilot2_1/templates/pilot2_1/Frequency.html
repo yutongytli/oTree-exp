@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+
+{% block content %}
+
+    <p>How often do you think people who support one party disagree with people who support the other party?</p>
+
+    <table class="table-condensed" style="width:200px; margin-top:10px;">
+
+
+             <tr>
+             <td><input type="radio" name="freq" value=1></td>
+             <td>Always</td>
+             </tr>
+            <tr>
+             <td><input type="radio" name="freq" value=2></td>
+             <td>Most of the time</td>
+             </tr>
+            <tr>
+             <td><input type="radio" name="freq" value=3></td>
+             <td>Sometimes</td>
+             </tr>
+            <tr>
+             <td><input type="radio" name="freq" value=4></td>
+             <td>Rarely</td>
+             </tr>
+            <tr>
+             <td><input type="radio" name="freq" value=5></td>
+             <td>Never</td>
+             </tr>
+
+
+    </table>
+    <p>
+    <br>
+    </p>
+
+    {% next_button %}
+{% endblock %}

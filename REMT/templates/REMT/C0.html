@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Part Two - Instructions
+{% endblock %}
+
+{% block content %}
+
+
+        <div style="text-indent:2em; line-height:170%; margin: 2em 5em;" >
+        Next, we will now show you 10 of the pictures you saw before, with the emotion that you selected. We will ask you to
+            indicate how confident you are that the person on the photo actually experienced that emotion.
+        </div>
+
+
+<div align="right" style="margin: 5em 5em">
+    {% next_button %}
+</div>
+
+{% endblock %}

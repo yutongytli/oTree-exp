@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        When talking about {{ party_self }}, how often do you use “we" instead of “they”?
+    </p>
+    <table class="table-condensed" style="width:200px; margin-top:10px;">
+
+        {% for value, content in mylist %}
+
+             <tr>
+             <td><input type="radio" name="partisan_6" value={{ value }}></td>
+             <td> {{ content }}</td>
+             </tr>
+
+        {% endfor %}
+
+    </table>
+    <p>
+    <br>
+    </p>
+
+    {% next_button %}
+{% endblock %}
+

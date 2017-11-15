@@ -1,0 +1,29 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        In the following task, you will listen to a series of audio recordings from different talkers. Please follow the
+        instructions and provide your impression of the talkers.
+    </p>
+    <p>
+        There are altogether 66 questions. Please expect to spend roughly 25 minutes for all of them(approx. 20 seconds
+        per question).
+    </p>
+    <p>
+        For each question, the associated audio clip will be automatically played once when the question appears, and
+        you may play it as many times as you like.
+    </p>
+    <p>
+        Please respond as quickly as possible. Please report your first impression and do not dwell on a particular file for
+        too long.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

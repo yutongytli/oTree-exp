@@ -1,0 +1,56 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Introduction
+{% endblock %}
+
+{% block content %}
+
+    <p>
+       This activity is part of a study in decision-making. You will be asked to do three experiments.
+    </p>
+    <p>
+       In these experiments, we are going to simulate several envelopes. Let's call them "virtual envelopes".
+        In reality, an envelope can prevent you from changing the notes sealed inside of it. The same goes for our experiments.
+        We "seal" some information by using an online AES Encryptor, so the "virtual envelopes" are actually some pieces of encrypted messages, which look like: <I><U>"U2FsdGVkX1+8FpVab/1AAEADz4ap/LEb54cczFNKB+w="</U></I>. <strong>And then, we cannot change your envelope content during the course of the experiment</strong>.
+        Now please let us explain more details.
+    </p>
+    <hr/>
+    <p>
+    We create the "virtual envelopes" using the following three steps:
+    </p>
+    <p>
+    <li><strong>Step 1:</strong> We go to a third party website named AES Encryptor: <a href="{{ link }}" target=_blank>https://www.browserling.com/tools/aes-encrypt</a>.</li>
+    <li><strong>Step 2:</strong> Before each experiment, we encrypt 21 pieces of information with a password. These pieces of information are different and used to decide your payment.</li>
+    <li><strong>Step 3:</strong> For each experiment, the AES Encryptor gives us 21 encrypted messages, for example: <I><U>"U2FsdGVkX1+8FpVab/1AAEADz4ap/LEb54cczFNKB+w="</U></I>. And these messages are called “virtual envelopes”.</li>
+    </p>
+    <hr/>
+    <p>
+    During one experiment, you will need to choose one of the envelopes and answer one related question.
+        Then after the experiment, we will give you a password to "open" your envelope on that third party website.
+    </p>
+    <p>
+    <strong>Please note: you can only open your envelope with a right password. We set three different passwords for three experiments,
+    so do not use the password from (say) experiment 1 to open the envelope you get in experiment 2. Otherwise, you will end up with a garbled message.</strong
+    </p>
+   <hr/>
+    <p>
+    To help you understand the whole process better,
+        here is a diagram of how the virtual envelope and these three experiments work:
+    </p>
+
+    <div style="text-align:center">
+        <img src="{% static "test_axiom/intro.png" %}" align="middle" height="60%" width="82%"/>
+    </div>
+    <p>
+    <br>
+    </p>
+
+    <p>
+        To familiar you with the decryption process, let's do a practice session. <br>
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

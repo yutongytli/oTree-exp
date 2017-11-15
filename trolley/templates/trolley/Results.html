@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block content %}
+
+    <div style="margin-bottom: 20px; margin-left: 50px">
+    Thank you for your participation!
+    </div>
+    <div style="margin-bottom: 20px; margin-left: 50px">
+    Your payoff is: $0.10.
+    </div>
+
+    <div align="right" style="margin: 0 140px;">
+        {% next_button %}
+    </div>
+{% endblock %}
+
+

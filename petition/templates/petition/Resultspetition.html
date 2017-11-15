@@ -1,0 +1,42 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Links
+{% endblock %}
+
+{% block content %}
+
+    <P>
+        <strong>Here is/are the link(s) to sign your petition(s):</strong>
+    </P>
+    <p>
+        <strong><I>Remember to come back and finish this survey after clicking the link(s)</I></strong>
+    </p>
+
+        <table class="table table-hover">
+
+            <tr><td width="30%" align="center"><strong>Issue</strong></td>
+            <td width="5%" align="center"><strong>Link</strong></td>
+            </tr>
+
+        {% for question, link in list %}
+
+            <tr><td width="30%" align="left">{{ question }}</td>
+            <td width="5%" align="center">
+                <a href="{{ link }}" target=_blank>Link</a>
+            </td>
+            </tr>
+
+        {% endfor %}
+
+
+        </table>
+    <p>
+        <strong><I>If you are not interested, please move to the next page.</I></strong>
+    </p>
+
+    {% next_button %}
+{% endblock %}
+
+

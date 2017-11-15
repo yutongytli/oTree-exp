@@ -1,0 +1,95 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    The Trolley Problem
+{% endblock %}
+
+{% block content %}
+
+{% if player.treatment == 'push3/16' or player.treatment == 'push15/16'%}
+
+    <div align="center">
+
+    <img src="{% static "trolley/trolley.png" %}" style="width: 390px; height: 230px"/>
+
+    </div>
+
+
+    <div style="margin: 5px 50px;">
+    A runaway trolley is heading down the tracks toward five workmen who will be killed if the trolley proceeds on
+        its present course. You are on a footbridge over the tracks, in between the approaching trolley and the five
+        workmen. Next to you on this footbridge is a stranger who happens to be very large.
+    </div>
+    <div style="margin: 5px 50px;">
+    The only way to save the lives of the five workmen is to push this stranger off the bridge and onto the tracks
+        below where his large body will stop the trolley. The stranger will die if you do this, but the five workmen
+        will be saved. If you choose to push the fat man, then suppose you succeed to push him with {{ N1 }} probability,
+        and with {{ N2 }} probability, you harmlessly trip.
+    </div>
+
+    <div align="center" style="margin: 30px 50px 5px;">
+        <strong>Is it appropriate for you to push the stranger on to the tracks in order to save the five workmen?</strong>
+    </div>
+
+{#{% elif player.treatment == 'walk3/16' or player.treatment == 'walk15/16'%}#}
+{##}
+{#    <div align="center">#}
+{##}
+{#    <img src="{% static "trolley/trolley.png" %}" style="width: 390px; height: 230px"/>#}
+{##}
+{#    </div>#}
+{##}
+{##}
+{#    <div style="margin: 5px 50px;">#}
+{#    A runaway trolley is heading down the tracks toward five workmen who will be killed if the trolley proceeds on#}
+{#        its present course. You are on a footbridge over the tracks, in between the approaching trolley and the five#}
+{#        workmen. Next to you on this footbridge is a stranger who happens to be very large.#}
+{#    </div>#}
+{#    <div style="margin: 5px 50px;">#}
+{#    The only way to save the lives of the five workmen is to push this stranger off the bridge and onto the tracks#}
+{#        below where his large body will stop the trolley. You now have a choice to walk away. if you choose to walk away,#}
+{#        then suppose you succeed to cross the footbridge with {{ N1 }} probability, and with {{ N2 }} probability,#}
+{#        you trip and topple the man off the bridge.#}
+{#    </div>#}
+{##}
+{#    <div align="center" style="margin: 30px 50px 5px;">#}
+{#        <strong>Is it appropriate for you to walk away?</strong>#}
+{#    </div>#}
+
+{% else %}
+
+    <div align="center">
+
+    <img src="{% static "trolley/trolley.png" %}" style="width: 390px; height: 230px"/>
+
+    </div>
+
+
+    <div style="margin: 5px 50px;">
+    A runaway trolley is heading down the tracks toward five workmen who will be killed if the trolley proceeds on
+        its present course. You are on a footbridge over the tracks, in between the approaching trolley and the five
+        workmen. Next to you on this footbridge is a stranger who happens to be very large.
+    </div>
+    <div style="margin: 5px 50px;">
+    The only way to save the lives of the five workmen is to push this stranger off the bridge and onto the tracks
+        below where his large body will stop the trolley. The stranger will die if you do this, but the five workmen
+        will be saved.
+    </div>
+
+    <div align="center" style="margin: 30px 50px 5px;">
+        <strong>Is it appropriate for you to push the stranger on to the tracks in order to save the five workmen?</strong>
+    </div>
+
+    {% endif %}
+
+    <div align="center" style="margin: 0px 50px;">
+    {% formfield player.choice with label=prompt %}
+    </div>
+
+
+<div align="right" style="margin: 0 140px;">
+    {% next_button %}
+</div>
+
+{% endblock %}

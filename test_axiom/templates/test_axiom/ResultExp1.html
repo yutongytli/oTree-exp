@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Experiment 1 - Your Payoff
+{% endblock %}
+
+{% block content %}
+
+    <div style="text-align:center">
+        <img src="{% static "test_axiom/exp1.png" %}" align="middle" height="220" width="820"/>
+    </div>
+
+    <p>
+        Since the number (X) is {{ larger_smaller }} the threshold ({{ threshold }}) you indicated before, you take {{ option }}.<br>
+        The ball draw from this drum is: <strong>{{ result }} ball</strong><br>
+        Your payoff for Experiment 1 is: <strong>{{ payoff }}</strong>.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Mouse tracking results
+{% endblock %}
+
+{% block content %}
+
+	<div id="container" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
+
+    {% next_button %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <script>
+
+		Highcharts.chart('container', {
+		    chart: {
+		        type: 'scatter'
+		    },
+		    title: {
+		        text: ''
+		    },
+		    xAxis: {
+		        title: {
+		            enabled: true,
+		            text: 'X'
+		        },
+		        startOnTick: true,
+		        endOnTick: true,
+		        showLastLabel: true
+		    },
+		    yAxis: {
+		        title: {
+		            text: 'Y'
+		        }
+		    },
+		    plotOptions: {
+		        scatter: {
+		            marker: {
+		                radius: 5,
+		                states: {
+		                    hover: {
+		                        enabled: true,
+		                        lineColor: 'rgb(100,100,100)'
+		                    }
+		                }
+		            },
+		            states: {
+		                hover: {
+		                    marker: {
+		                        enabled: false
+		                    }
+		                }
+		            },
+		            tooltip: {
+		                headerFormat: '<b>{series.name}</b><br>',
+		                pointFormat: 'x: {point.x}, y: {point.y}'
+		            }
+		        }
+		    },
+		    series: {{ series }}
+		});
+
+    </script>
+
+{% endblock %}

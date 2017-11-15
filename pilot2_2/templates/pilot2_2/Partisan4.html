@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        How well does the term {{ party_self }} describe you?
+    </p>
+    <table class="table-condensed" style="width:200px; margin-top:10px;">
+
+        {% for value, content in mylist %}
+
+             <tr>
+             <td><input type="radio" name="partisan_4" value={{ value }}></td>
+             <td> {{ content }}</td>
+             </tr>
+
+        {% endfor %}
+
+    </table>
+    <p>
+    <br>
+    </p>
+
+    {% next_button %}
+{% endblock %}
+

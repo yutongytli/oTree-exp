@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Completion Page
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Please tell us a little bit about yourself.
+    </p>
+    {% formfield player.q1 with label="Have you taken this test before?" %}
+    {% formfield player.q2 with label="How old are you?" %}
+    {% formfield player.q3 with label="What is your gender?" %}
+    {% formfield player.q4 with label="How often do you use a computer?" %}
+    {% formfield player.q5 with label='What is the highest level of school you have completed or the highest degree you have received? '%}
+{#    {% formfield player.q5 with label="What device are you using to click right now?" %}#}
+    {% formfield player.q6 with label="In what country did you live most of your childhood? (Please pick one than influenced you the most if you grew up in more than one)" %}
+    {% formfield player.q7 with label="In what country have you spent most of the past five years?" %}
+    {% formfield player.q8 with label="If you are not a native speaker of English, did you recognize all the words used to describe emotions?" %}
+    {% formfield player.q9 with label="Do you have any other comments for the researcher? Questions, Suggestions, or Concerns?" %}
+
+
+
+    {% next_button %}
+
+{% endblock %}

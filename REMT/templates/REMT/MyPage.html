@@ -1,0 +1,48 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Part One - Progress: face {{ player.round_number }} of 36
+{% endblock %}
+
+{% block content %}
+
+
+
+<div>
+    <div align="center" style="border:1px solid black; width:550px; height: 450px; margin: 0 0 0 50px; float: left">
+        <div align="left" style="margin: 50px 0 50px 30px; float: left">
+{#            <a href=# style="font-size: 25px" title={{ d }}>{{ choice1 }}</a>#}
+            <span style="font-size: 25px" title="{{ title1 }}">{{ choice1 }}</span>
+        </div>
+        <div align="right" style="margin: 50px 30px 50px 0; float: right">
+            <span style="font-size: 25px" title="{{ title2 }}">{{ choice2 }}</span>
+        </div>
+        <div align="center" >
+                <img src="{% static image %}" style="width: 450px; height: 170px"/>
+        </div>
+        <div align="left" style="margin: 50px 0 50px 30px; float: left">
+            <span style="font-size: 25px" title="{{ title3 }}">{{ choice3 }}</span>
+        </div>
+        <div align="right" style="margin: 50px 30px 50px 0; float: right">
+            <span style="font-size: 25px" title="{{ title4 }}">{{ choice4 }}</span>
+        </div>
+    </div>
+
+        <div style="margin: 25px 40px 0 0;float: right">
+            {% formfield player.answer with label='What emotion are the eyes showing?' %}
+
+            {% next_button %}
+            {% include 'REMT/Dictionary.html' %}
+
+        </div>
+
+
+     <div style="clear:both;"></div>
+</div>
+
+    <div>
+
+    </div>
+
+{% endblock %}

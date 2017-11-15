@@ -1,0 +1,54 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Questionnaire - Part Three
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Please answer the following questions.
+    </p>
+
+    {% formfield player.citizenship with label='What is your country of citizenship' %}
+
+    {% formfield player.language with label='What is your mother tongue (native language)' %}
+
+    {% formfield player.age with label='What is your age' %}
+
+    {% formfield player.gender with label='What is your gender' %}
+
+    {% formfield player.educ with label='What is the highest level of school you have completed or the highest degree you have received? '%}
+
+    {% formfield player.religion with label='What is your religion?' %}
+
+    {% formfield player.income with label='Total annual household income' %}
+
+    {% formfield player.time with label='How many times have you participated in experiments before today' %}
+
+
+    <p>
+    <strong>
+        How hard to understand were today's experiments? For each experiment choose the most appropriate option. Please
+        note that this will not influence your payoff and will not be linked to your personal data.
+    </strong>
+    </p>
+    {% formfield player.exp1 with label="Experiment 1" %}
+    {% formfield player.other1 with label='Please specify the details if you choose Other' %}
+    {% formfield player.exp2 with label="Experiment 2" %}
+    {% formfield player.other2 with label='Please specify the details if you choose Other' %}
+    {% formfield player.exp3 with label="Experiment 3" %}
+    {% formfield player.other3 with label='Please specify the details if you choose Other' %}
+
+    <p>
+    <strong>
+        How hard to understand were the "virtual envelope"?
+    </strong>
+    </p>
+    {% formfield player.envelope with label=prompt %}
+    {% formfield player.other4 with label='Please specify the details if you choose Other' %}
+
+    {% next_button %}
+
+{% endblock %}

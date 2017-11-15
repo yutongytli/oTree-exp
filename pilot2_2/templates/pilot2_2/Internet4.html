@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+
+{% block content %}
+
+    <p>
+        <u>PLEASE READ CAREFULLY</u>: Your answer indicates that you may not have been paying enough attention.
+        In the instructions to the previous question, we wrote:
+    </p>
+    <p>
+        "We want to check that people take the time they need to read the instructions. <strong>To show that you have
+        read carefully, please ignore the question (...) and simply select the response category "I do not have access
+        to the internet</strong>" to move on to the next question.
+    </p>
+
+    <table class="table-condensed" style="width:300px; margin-top:10px;">
+
+
+             <tr>
+             <td><input type="radio" name="internet_4" value={{ value1 }}></td>
+             <td> {{ content1 }}</td>
+             </tr>
+             <tr>
+             <td><input type="radio" name="internet_4" value={{ value2 }}></td>
+             <td> {{ content2 }}</td>
+             </tr>
+
+
+    </table>
+    <p>
+    <br>
+    </p>
+    {% next_button %}
+{% endblock %}

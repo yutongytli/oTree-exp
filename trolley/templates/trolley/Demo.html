@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    About You
+{% endblock %}
+
+{% block content %}
+    
+    <div style="margin-bottom: 20px; margin-left: 50px">
+    Now we just want you to answer a few questions about yourself, so we can analyse how you've done compared to other people.
+    </div>
+    <div style="margin-bottom: 20px; margin-left: 50px">
+        {% formfield player.gender with label="What is your gender?" %}
+    {% formfield player.educ with label='What is the highest level of school you have completed or the highest degree you have received? '%}
+        {% formfield player.age with label="How old are you?" %}
+    {% formfield player.taken with label="Have you taken this test before?" %}
+    {% formfield player.nationality with label="What is your nationality?" %}
+    </div>
+
+    <div align="right" style="margin: 0 140px;">
+        {% next_button %}
+    </div>
+
+{% endblock %}

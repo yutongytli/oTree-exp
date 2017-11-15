@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block content %}
+
+    <p>
+    We would like to know your opinion on current events in the United States.
+        Pick the answers that best capture your own point of view.
+    </p>
+    <p>
+    <strong>
+        Read the questions carefully: some may be difficult to answer if you are not paying attention.
+    </strong>
+    </p>
+    <p>
+    <I>
+        <u>Important information</u>: This study is strictly confidential and your answers will be collected anonymously.
+    </I>
+    </p>
+    <p>
+    <br>
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

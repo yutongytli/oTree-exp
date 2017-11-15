@@ -1,0 +1,45 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Experiment 1 - Your Result
+{% endblock %}
+
+{% block content %}
+
+    <div style="text-align:center">
+        <img src="{% static "test_axiom/exp1.png" %}" align="middle" height="220" width="820"/>
+    </div>
+
+    <p>
+    <br>
+    </p>
+    <p>
+        The ball drawn from the drum for Option A is: <strong>{{ result_A }} ball</strong>.<br>
+        The ball drawn from the drum for Option B is: <strong>{{ result_B }} ball</strong>.
+    </p>
+    <hr />
+    <p>
+        The envelope you chose is: <div style="text-align:center"><strong>{{ message }}</strong></div>
+    </p>
+    <p>
+        Now you can open your envelope on the third party website: <a href="{{ link }}" target=_blank>https://www.browserling.com/tools/aes-decrypt</a><br>
+    with the password:
+    </p>
+        <div style="text-align:center"><strong>woshimima17</strong></div>
+
+    <p>
+        Note: The password above is only valid for Experiment 1.
+    </p>
+    <hr />
+
+    {% formfield player.message1 with label="Please enter the encrypted information here" %}
+    <p>
+            <font color="red">WARNING: If what you enter does not match the encrypted information, your payments for this experiment will be reduced. <br>
+                </font>
+        So check carefully the envelope you chose, and make sure you decrypt it in the right way.
+    </p>
+
+
+    {% next_button %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <p>
+The U.S. Bureau of Labor Statistics counts a person as unemployed if this person is not employed at any job and is
+        looking for work. By this definition, 5.5 percent of Americans were unemployed in December 2015 when President
+        Obama was still in office.
+    </p>
+    <p>
+        What percentage of Americans do you think are currently unemployed today (June 2017)?
+        If you are not entirely sure which answer is correct, please take your best guess.
+    </p>
+
+    {% formfield player.employ with label=prompt %}
+
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Your Result
+{% endblock %}
+
+{% block content %}
+
+    {% if player.check_0 == 1 %}
+
+        <p>
+            The text you entered before matches the encrypted information. <br>
+            Please click the next button and go on.
+        </p>
+
+        {% next_button %}
+
+    {% else %}
+
+        {% formfield player.message0_other with label="The text you entered before appears to contain some errors. Please enter it here again" %}
+
+        <p>
+            <font color="red">WARNING: If what you enter does not match the encrypted information, your payments for the next three experiments will be reduced. <br>
+                </font>
+        So check carefully the envelope you chose, and make sure you decrypt it in the right way.
+        </p>
+        <hr/>
+        <p>
+            The envelope you chose: <div style="text-align:center"><strong>{{ message }}</strong></div>
+        </p>
+        <p>
+            You can go to the website: <a href="{{ link }}" target=_blank>https://www.browserling.com/tools/aes-decrypt</a> to open the envelope with the password:
+        </p>
+    <div style="text-align:center"><strong>wohenkaixin</strong></div>
+        <hr/>
+        {% next_button %}
+        <p>
+        <font color="red"><strong><u>If you are not sure where and how to decrypt it, please refer to the instructions below:</u></strong></font>
+    </p>
+    {% include 'test_axiom/Exp0_ins.html' %}
+
+
+    {% endif %}
+
+
+{% endblock %}

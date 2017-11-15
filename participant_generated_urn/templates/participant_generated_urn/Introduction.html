@@ -1,0 +1,38 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Introduction
+{% endblock %}
+
+{% block content %}
+
+    {% if player.treatment == 'Experimenter' %}
+
+    {% include 'participant_generated_urn/Instructions_2.html' %}
+
+    <p>
+        <strong> The total number of balls in the urn is: {{ total }}</strong>
+    </p>
+
+    {% else %}
+
+    {% include 'participant_generated_urn/Instructions.html' %}
+
+    <p>
+        <strong> The total number of balls in the urn is: {{ total }}</strong>
+    </p>
+
+    {% endif %}
+
+    <p>
+        Now please first choose ♡ or ☺︎. This choice is irrelevant for you personally, but influences whether the symbol
+        coins of the other participants land on ♡ or ☺︎.
+    </p>
+
+    {% formfield player.decision with label='Please choose one of the following symbols:' %}
+
+    {% next_button %}
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Introduction
+{% endblock %}
+
+{% block content %}
+
+    <div style="margin-bottom: 20px; margin-left: 50px">
+        This HIT is an academic experiment on decision making.
+    </div>
+    <div style="margin-bottom: 20px; margin-left: 50px">
+        In this study, you will be asked to answer one question and a short survey after it. <br>
+        It will take about 2-3 minutes to complete the study. <br>
+        And you will receive a fixed fee of $0.10 for your participation. <br>
+    </div>
+
+    <div align="right" style="margin: 0 140px;">
+    {% next_button %}
+</div>
+
+{% endblock %}

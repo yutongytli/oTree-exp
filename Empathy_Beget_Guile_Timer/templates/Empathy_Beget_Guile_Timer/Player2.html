@@ -1,0 +1,29 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Task 3: Two-player Communication Game
+{% endblock %}
+
+{% block content %}
+
+    {% include 'Empathy_Beget_Guile_Timer/Task3_intro.html' %}
+    <p>
+        The message for you is :
+    </p>
+
+{% if player.other_player.message == 'Message 1' %}
+    <p>
+        <strong>"Option A will earn you more money than Option B."</strong>
+    </p>
+
+{% else %}
+    <p>
+        <strong>"Option B will earn you more money than Option A."</strong>
+    </p>
+{% endif %}
+
+    {% formfield player.option_AB with label='Which option do you want to choose?' %}
+
+    {% next_button %}
+{% endblock %}

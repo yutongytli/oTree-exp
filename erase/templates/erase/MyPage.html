@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Information Seeking
+{% endblock %}
+
+{% block content %}
+
+    <p>
+    <strong>Would you like to find more information about one of the following issues?
+        If so, let us know by choosing one of the buttons(optional). </strong>
+    </p>
+
+    {% formfield player.option with label=prompt %}
+
+    <p>
+        <strong><I>If you are not interested, please move to the next page. </I></strong>
+    </p>
+
+    {% next_button %}
+
+{% endblock %}
+
+
+

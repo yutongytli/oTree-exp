@@ -1,0 +1,27 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Task 3: Judge the Fairness
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        1. Mr. Johnson is about to close a deal and sell his car for $1,200. The engine’s oil pump does not work well,
+        and Mr. Johnson knows that if the buyer learns about this, he will have to reduce the price by $250 (the cost of
+        fixing the pump). If Mr. Johnson does not tell the buyer, the engine will overheat on the first hot day,
+        resulting in damages of $250 for the buyer. Being winter, the only way the buyer can learn about this now is if
+        Mr. Johnson were to tell him. Otherwise, the buyer will learn about it only on the next hot day. Mr. Johnson
+        chose not to tell the buyer about the problems with the oil pump.
+    </p>
+    {% formfield player.D_Q39_1 with label='In your opinion, Mr. Johnson’s behavior is:' %}
+    <p>
+        2. What would your answer be if the cost of fixing the damage for the buyer in case Mr. Johnson does not tell
+        him is $1,000 instead of $250?
+    </p>
+    {% formfield player.D_Q39_2 with label='Mr. Johnson’s behavior is:' %}
+
+
+    {% next_button %}
+{% endblock %}

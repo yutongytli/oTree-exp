@@ -1,0 +1,128 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+{% load staticfiles %}
+
+{% block title %}
+    Survey on Speech Perception
+{% endblock %}
+
+{% block content %}
+
+    <source src="{% static "covering/1.mp4" %}" type="video/mp4">
+
+    <form>
+    <p><strong> 1. Please provide your impression of the voice recording in the matrix below: </strong></p>
+        <table class="table table-hover">
+            <tr><td>Very Attractive</td>
+            <td><input type="radio" name="attractive" value=1></td>
+            <td><input type="radio" name="attractive" value=2></td>
+            <td><input type="radio" name="attractive" value=3></td>
+            <td><input type="radio" name="attractive" value=4></td>
+            <td><input type="radio" name="attractive" value=5></td>
+            <td><input type="radio" name="attractive" value=6></td>
+            <td><input type="radio" name="attractive" value=7></td>
+            <td>Very Unattractive</td></tr>
+
+            {{ form.attractive.errors }}
+
+            <tr><td>Very Masculine</td>
+            <td><input type="radio" name="masculine" value=1></td>
+            <td><input type="radio" name="masculine" value=2></td>
+            <td><input type="radio" name="masculine" value=3></td>
+            <td><input type="radio" name="masculine" value=4></td>
+            <td><input type="radio" name="masculine" value=5></td>
+            <td><input type="radio" name="masculine" value=6></td>
+            <td><input type="radio" name="masculine" value=7></td>
+            <td>Not At All Masculine</td></tr>
+
+            {{ form.masculine.errors }}
+
+            <tr><td>Not Intelligent</td>
+            <td><input type="radio" name="intelligent" value=1></td>
+            <td><input type="radio" name="intelligent" value=2></td>
+            <td><input type="radio" name="intelligent" value=3></td>
+            <td><input type="radio" name="intelligent" value=4></td>
+            <td><input type="radio" name="intelligent" value=5></td>
+            <td><input type="radio" name="intelligent" value=6></td>
+            <td><input type="radio" name="intelligent" value=7></td>
+            <td>Intelligent</td></tr>
+
+            {{ form.intelligent.errors }}
+
+            <tr><td>Very Unaggressive</td>
+            <td><input type="radio" name="unaggressive" value=1></td>
+            <td><input type="radio" name="unaggressive" value=2></td>
+            <td><input type="radio" name="unaggressive" value=3></td>
+            <td><input type="radio" name="unaggressive" value=4></td>
+            <td><input type="radio" name="unaggressive" value=5></td>
+            <td><input type="radio" name="unaggressive" value=6></td>
+            <td><input type="radio" name="unaggressive" value=7></td>
+            <td>Very Aggressive</td></tr>
+
+            {{ form.aggressive.errors }}
+
+            <tr><td>Not Trustworthy</td>
+            <td><input type="radio" name="trustworthy" value=1></td>
+            <td><input type="radio" name="trustworthy" value=2></td>
+            <td><input type="radio" name="trustworthy" value=3></td>
+            <td><input type="radio" name="trustworthy" value=4></td>
+            <td><input type="radio" name="trustworthy" value=5></td>
+            <td><input type="radio" name="trustworthy" value=6></td>
+            <td><input type="radio" name="trustworthy" value=7></td>
+            <td>Trustworthy</td></tr>
+
+            {{ form.trustworthy.errors }}
+
+            <tr><td>Very Confident</td>
+            <td><input type="radio" name="confident" value=1></td>
+            <td><input type="radio" name="confident" value=2></td>
+            <td><input type="radio" name="confident" value=3></td>
+            <td><input type="radio" name="confident" value=4></td>
+            <td><input type="radio" name="confident" value=5></td>
+            <td><input type="radio" name="confident" value=6></td>
+            <td><input type="radio" name="confident" value=7></td>
+            <td>Very Timid</td></tr>
+
+            {{ form.confident.errors }}
+        </table>
+
+    <p><strong> 2. Assuming that this is a lawyer arguing a case in front of a panel of judges. How likely do you think this
+    lawyer will win the case? </strong></p>
+        <table class="table table-hover">
+            <tr><td>Will Definitely Loss</td>
+            <td><input type="radio" name="loss" value=1></td>
+            <td><input type="radio" name="loss" value=2></td>
+            <td><input type="radio" name="loss" value=3></td>
+            <td><input type="radio" name="loss" value=4></td>
+            <td><input type="radio" name="loss" value=5></td>
+            <td><input type="radio" name="loss" value=6></td>
+            <td><input type="radio" name="loss" value=7></td>
+            <td>Will Definitely Win</td></tr>
+
+            {{ form.loss.errors }}
+
+        </table>
+
+    <p><strong> 3. How good is the quality of the recording? </strong></p>
+        <table class="table table-hover">
+            <tr><td>Very Bad</td>
+            <td><input type="radio" name="quality" value=1></td>
+            <td><input type="radio" name="quality" value=2></td>
+            <td><input type="radio" name="quality" value=3></td>
+            <td><input type="radio" name="quality" value=4></td>
+            <td><input type="radio" name="quality" value=5></td>
+            <td><input type="radio" name="quality" value=6></td>
+            <td><input type="radio" name="quality" value=7></td>
+            <td>Very Good</td></tr>
+
+            {{ form.quality.errors }}
+
+        </table>
+
+    </form>
+
+
+
+    {% next_button %}
+
+{% endblock %}

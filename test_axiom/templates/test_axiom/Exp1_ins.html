@@ -1,0 +1,25 @@
+{% load otree_tags staticfiles %}
+
+<div class="instructions well well-lg">
+    <h3 class="panel-sub-heading">
+        Instructions
+    </h3>
+
+    <p>
+        In this first of 3 experiments you will decide between two options. In both options your payoff depends on the
+    result of a random draw from a drum filled with balls and some unknown amount $X.
+    </p>
+    <p>
+        We will conduct 2 draws. First we will fill the drum as shown in the table for "Option A" below and randomly draw a
+    single ball. Then we will fill the drum as shown in the table for "Option B" below, and randomly draw a single ball.
+    The whole process will be done by the computer.
+    </p>
+
+    <p>
+        Before the game starts, you need to choose one of the envelopes. Each envelope contains a random number from 0.00 to
+        1.00. All possible numbers have equal probability. <strong>These numbers are randomly preselected by the computer
+        and will remain the same all through the experiment</strong>. Once experiment 1 is over, we will give you a password to open your envelope on the third party website:
+        <a href="{{ link }}" target=_blank>https://www.browserling.com/tools/aes-decrypt</a>. Then you can get your result.
+    </p>
+
+</div>

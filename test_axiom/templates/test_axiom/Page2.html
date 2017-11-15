@@ -1,0 +1,74 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Questionnaire - Part One
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Please answer the following questions.
+    </p>
+    <p>
+    <br>
+    </p>
+    <p>
+        In this part of the questionnaire we will ask you to make a choice between pairs of lotteries. These lotteries will
+    NOT be paid out. Please answer as you think you would if the choice were real rather than hypothetical. Note that in
+    neither of these questions there is a unique correct answer.
+    </p>
+    <p>
+    <br>
+    </p>
+        {% if order == 0 %}
+            <p>
+    <strong>
+        QUESTION:
+    </strong>
+    Suppose you got offered a choice between these 2 lotteries. Suppose you would not have to pay anything for either of
+    them, and you could choose exactly one lottery.
+    </p>
+
+    {% formfield player.q4 with label='Which one would you choose' %}
+    <p>
+    <br>
+    </p>
+    <p>
+    <strong>
+        QUESTION:
+    </strong>
+    Now imagine you did not get the choice offered above, but instead got offered a choice between the 2 lotteries below
+    for free. And you choose exactly one.
+    </p>
+    {% formfield player.q5 with label='Which one would you choose' %}
+
+    {% else %}
+
+    <p>
+    <strong>
+        QUESTION:
+    </strong>
+    Now imagine you did not get the choice offered above, but instead got offered a choice between the 2 lotteries below
+    for free. And you choose exactly one.
+    </p>
+    {% formfield player.q5 with label='Which one would you choose' %}
+    <p>
+    <br>
+    </p>
+    <p>
+    <strong>
+        QUESTION:
+    </strong>
+    Suppose you got offered a choice between these 2 lotteries. Suppose you would not have to pay anything for either of
+    them, and you could choose exactly one lottery.
+    </p>
+
+    {% formfield player.q4 with label='Which one would you choose' %}
+
+    {% endif %}
+
+
+    {% next_button %}
+
+{% endblock %}

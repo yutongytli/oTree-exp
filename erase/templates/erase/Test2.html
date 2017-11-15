@@ -1,0 +1,304 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Information Seeking
+{% endblock %}
+
+{% block content %}
+
+    <P>
+        Your choice: <strong>{{ issue }}</strong>.
+    </P>
+
+    <div id="Questions">
+    Please move your mouse over the following black box. You can press your left mouse button and move to get more information with a spotlight.
+    </div>
+    <p>
+
+    </p>
+
+    <div id="card" >
+      <canvas id="canvasOne" width="690" height="600"></canvas>
+    </div>
+
+
+    <input type="hidden" name="mouse_x" value="" id="mouse_x"/>
+    <input type="hidden" name="mouse_y" value="" id="mouse_y"/>
+    <input type="hidden" name="mouse_t" value="" id="mouse_t"/>
+
+
+    <button class="btn btn-primary" onclick="stopCount();">Next</button>
+
+{% endblock %}
+
+{% block styles %}
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        html {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        body {
+            min-height: 100%;
+            padding: 1vw;
+            text-align: left;
+
+        }
+
+        #card {
+            width: 690px;
+            height: 600px;
+            margin: 0 auto;
+            background: url(http://wx3.sinaimg.cn/mw690/006bpbHRgy1ff7b1bsgalj313s0ykn7t.jpg) no-repeat left;
+
+
+        }
+
+    </style>
+
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+
+        window.addEventListener('load', eventWindowLoaded, false);
+
+        var Debugger = function() {};
+
+        Debugger.log = function(message) {
+            try {
+                console.log(message);
+            } catch (exception) {
+                return;
+            }
+        };
+
+        function eventWindowLoaded() {
+            canvasApp();
+        }
+
+        function canvasApp() {
+            Debugger.log('Drawing Canvas');
+
+
+            var canvas = document.getElementById('canvasOne');
+            var ctx = canvas.getContext('2d');
+
+            var w = canvas.width = 690;    //黑色罩子的宽度
+            var h = canvas.height = 600;   //黑色罩子的高度
+
+            function reOffset() {
+                var BB = canvas.getBoundingClientRect();
+                offsetX = BB.left;
+                offsetY = BB.top;
+            }
+
+            var offsetX, offsetY;
+            reOffset();
+
+            window.onscroll = function(e) {
+                reOffset();
+            };
+
+            window.onresize = function(e) {
+                reOffset();
+            };
+
+            canvas.addEventListener('mousemove', mouseMove, false);
+            canvas.addEventListener('touchmove', mouseMove, false);
+
+            function draw(cx, cy, radius) {
+
+                ctx.save();
+                ctx.clearRect(0, 0, w, h);
+
+                var radialGradient = ctx.createRadialGradient(cx, cy, 1, cx, cy, radius);
+
+                radialGradient.addColorStop(0, 'rgba(0, 0, 0, 1)');
+                radialGradient.addColorStop(.65, 'rgba(0, 0, 0, 1)');
+                radialGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+                ctx.beginPath();
+
+                ctx.fillStyle = '#000';
+                ctx.fillRect(0, 0, w, h);
+
+                if(event.which == 1){
+                ctx.globalCompositeOperation = 'destination-out';
+
+                ctx.arc(cx, cy, radius, 0, Math.PI * 2, false);
+                ctx.fillStyle = radialGradient;
+                ctx.fill();
+
+                ctx.restore();
+                }
+
+            }
+
+            function mouseMove(e) {
+
+                e.preventDefault();
+                e.stopPropagation();
+
+                mouseX = parseInt(e.clientX - offsetX);
+                mouseY = parseInt(e.clientY - offsetY);
+
+                draw(mouseX, mouseY, 100);
+            }
+            draw(w / 2, h / 2, 100);
+        }
+
+
+{#    document.onmousemove = getMousePosition; //set document to record mouse position#}
+{##}
+{#		//initialize arrays#}
+{#		var delayedXPos = new Array();#}
+{#		var delayedYPos = new Array();#}
+{#		var delayedTime = new Array();#}
+{##}
+{#		var xPos = new Array();#}
+{#		var yPos = new Array();#}
+{##}
+{#		//initialize time variables#}
+{#		var initTime = new Date().getTime();#}
+{#		var timer_is_on = 0;#}
+{#		var t;#}
+{##}
+{#		//time interval for data collection in ms#}
+{#		var dt = 10;#}
+{##}
+{#		//flag signaling whether getMousePosition has been called#}
+{#		mp_called = 0;#}
+{##}
+{#		//function that determines action when mouse moves#}
+{#		function getMousePosition(mp)#}
+{#		{#}
+{#		    if(event.which==1) {#}
+{#                var divPos = getPosition(document.getElementById("Questions"));#}
+{#                xPos.push(mp.pageX - divPos[0]);#}
+{#                yPos.push(mp.pageY - divPos[1]);#}
+{#                mp_called = 1;#}
+{#                return true;#}
+{#            }#}
+{#		}#}
+{##}
+{#		function timedCount()#}
+{#		{#}
+{#		if(mp_called){#}
+{#		 	delayedXPos.push(xPos[xPos.length-1]);#}
+{#		 	delayedYPos.push(yPos[yPos.length-1]);#}
+{#		 	var timeInSec = (new Date().getTime()-initTime) / 1000.;#}
+{#		 	delayedTime.push(timeInSec);#}
+{#		}#}
+{#			t=setTimeout("timedCount()",dt);#}
+{#		}#}
+{##}
+{#		function doTimer()#}
+{#		{#}
+{#		   if (!timer_is_on)#}
+{#		   {#}
+{#		    initTime = new Date().getTime();#}
+{#		    timer_is_on=1;#}
+{#		    timedCount();#}
+{#		   }#}
+{#		}#}
+{##}
+{#		function stopCount()#}
+{#		{#}
+{#		    clearTimeout(t);#}
+{#		    timer_is_on=0;#}
+{##}
+{#		    document.getElementById('mouse_x').value = delayedXPos.join();#}
+{#		    document.getElementById('mouse_y').value = delayedYPos.join();#}
+{#		    document.getElementById('mouse_t').value = delayedTime.join();#}
+{#		}#}
+{##}
+{##}
+{#		function getPosition(obj){#}
+{##}
+{#		var topValue= 0,leftValue= 0;#}
+{##}
+{#		while(obj)#}
+{#		{#}
+{#		    leftValue+= obj.offsetLeft;#}
+{#			topValue+= obj.offsetTop;#}
+{#			obj= obj.offsetParent;#}
+{#		}#}
+{##}
+{#		return [leftValue, topValue];#}
+{#		}#}
+{##}
+{#		//start collecting data after page loads#}
+{#		document.onload = doTimer();#}
+
+
+    var xPos = new Array();
+    var yPos = new Array();
+    var tPos = new Array();
+
+    var canvas = document.getElementById('canvasOne');
+
+    canvas.addEventListener('mousemove', function(evt){
+        if(event.which==1) {
+            var mousePos = getMousePos(canvas, evt);
+            xPos.push(mousePos.x);
+            yPos.push(Math.round(mousePos.y));
+        }
+    }, false);
+
+//Get Mouse Position
+    function getMousePos(canvas, evt) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+        x: evt.clientX - rect.left,
+        y: evt.clientY - rect.top
+        };
+    }
+
+{#    function getMouseTime(){#}
+{#        var Time = new Date().getTime();#}
+{#        return Time#}
+{#    }#}
+{##}
+{#    document.onmousedown = getMouseTime;#}
+{#    document.onmouseup = getMouseTime;#}
+
+    var time=0;
+
+    document.addEventListener('mousedown', keydown, false);
+
+    document.addEventListener('mouseup', keyup, false);
+
+    function keydown(ev) {
+      if (time === 0) {
+        time = ev.timeStamp;
+      }
+    }
+    function keyup(ev) {
+      if (time !== 0) {
+        tPos.push((ev.timeStamp - time) / 1000.);
+        time = 0;
+      }
+    }
+
+
+    function stopCount()
+		{
+		    document.getElementById('mouse_x').value = xPos.join();
+		    document.getElementById('mouse_y').value = yPos.join();
+		    document.getElementById('mouse_t').value = tPos.join();
+		}
+
+        </script>
+{% endblock %}
+
+

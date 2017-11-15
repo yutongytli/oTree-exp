@@ -1,0 +1,32 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Completion Page
+{% endblock %}
+
+{% block content %}
+    <p>
+        Please answer the several questions before getting your result.
+    </p>
+
+    {% formfield player.gender with label='What is your gender?' %}
+
+    {% formfield player.age with label='What is your age?' %}
+
+    {% formfield player.religion with label='What is your religion?' %}
+
+    {% formfield player.services with label='How often do you attend services?' %}
+
+{#    <p>#}
+{#        Please click on this link to get your completion code (it will open as a new window):#}
+{#    </p>#}
+{#    {% formfield player.ger_code1 with label='Enter the code AND on the Mechanical Turk Website' %}#}
+{##}
+{#    <p>#}
+{#        Please click on this link to get your completion code (it will open as a new window):#}
+{#    </p>#}
+{#    {% formfield player.get_code2 with label='Enter the code AND on the Mechanical Turk Website' %}#}
+
+    {% next_button %}
+{% endblock %}

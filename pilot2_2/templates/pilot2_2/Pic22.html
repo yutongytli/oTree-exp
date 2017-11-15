@@ -1,0 +1,46 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    
+    <div style="text-align:center">
+        <img src="{% static "pilot2_2/dem_rep.png" %}" align="middle" height="200" width="500"/>
+    </div>
+
+    <p>
+    These days, Democrats and Republicans differ greatly in their political ideals and their preferred policies.<br>
+        First, we would like first to ask you about the <strong>{{ party_other }} Party</strong>.
+    </p>
+    <p>
+    Think about your biggest criticisms or complaints against this party and people who support it.
+        What is it that you especially dislike about the {{ party_other }} Party?
+    </p>
+    <p>
+    <strong>
+        In the space below, please write 3 or 4 things you especially DISLIKE about the {{ party_other }} Party:
+    </strong>
+    </p>
+
+    {% formfield player.pic2_dislike with label=prompt %}
+
+    <p>
+        Next, please take some time to consider the party you feel the closest to - that is, the <strong>{{ party_self }} Party</strong>.
+    </p>
+    <p>
+    Please take some time to think about why you prefer the {{ party_self }} Party, as opposed to the {{ party_other }} Party.
+        What is it that you especially like about the {{ party_self }} Party?
+    </p>
+    <p>
+    <strong>
+    In the space below, please write 3 or 4 things you especially LIKE about the {{ party_self }} Party:
+    </strong>
+    </p>
+
+    {% formfield player.pic2_like with label=prompt %}
+
+    {% next_button %}
+{% endblock %}
