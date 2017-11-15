@@ -1,0 +1,50 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Your Decision
+{% endblock %}
+
+{% block content %}
+
+    {% include 'ambiguity_exp2/Instructions.html' %}
+
+{% if player.g == 'First Group' %}
+
+
+    <p>
+        Alternative A: If a red ball is drawn: Regardless of the result of the coin flip, you will be paid $0.50. If a
+        black ball is drawn: Regardless of the result of the coin flip, you will be paid $0.00. If a white ball is
+        drawn: If the coin has landed on its heads you will be paid $0.50. If it lands on its tails, you will be paid
+        $0.00.
+    </p>
+
+    <p>
+        Alternative B: If a red ball is drawn, Regardless of the result of the coin flip, you will be paid $0.00. If a
+        black ball is drawn: Regardless of the result of the coin flip, you will be paid $0.50. If a white ball is
+        drawn: If the coin has landed on its heads you will be paid $0.50. If it lands on its tails, you will be paid
+        $0.00.
+    </p>
+
+{% else %}
+
+    <p>
+        Alternative A: If a red ball is drawn, Regardless of the result of the coin flip, you will be paid $0.00. If a
+        black ball is drawn: Regardless of the result of the coin flip, you will be paid $0.50. If a white ball is
+        drawn: If the coin has landed on its heads you will be paid $0.50. If it lands on its tails, you will be paid
+        $0.00.
+    </p>
+
+    <p>
+        Alternative B: If a red ball is drawn: Regardless of the result of the coin flip, you will be paid $0.50. If a
+        black ball is drawn: Regardless of the result of the coin flip, you will be paid $0.00. If a white ball is
+        drawn: If the coin has landed on its heads you will be paid $0.50. If it lands on its tails, you will be paid
+        $0.00.
+    </p>
+
+{% endif %}
+
+    {% formfield player.decision with label='Lottery Choice' %}
+{% next_button %}
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Your Decision
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Now please first choose ↗ or ↖︎. This choice is irrelevant for you personally, but influences whether the symbol
+        coins of the other participants land on ↗ or ↖︎.
+    </p>
+
+    {% formfield player.decision with label='Please choose one of the following symbols:' %}
+
+    {% next_button %}
+
+
+{% endblock %}

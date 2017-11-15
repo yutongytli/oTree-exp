@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 CHANNEL_ROUTING = 'Empathy_Beget_Guile_Timer.routing.channel_routing'
 
-ROOT_URLCONF = 'redirect.urls'
+# ROOT_URLCONF = 'redirect.urls'
 
 # the environment variable OTREE_PRODUCTION controls whether Django runs in
 # DEBUG mode. If OTREE_PRODUCTION==1, then DEBUG=False
@@ -60,7 +60,7 @@ AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 
 # e.g. EUR, CAD, GBP, CHF, CNY, JPY
 REAL_WORLD_CURRENCY_CODE = 'USD'
-USE_POINTS = True
+USE_POINTS = False
 
 
 # e.g. en, de, fr, it, ja, zh-hans
@@ -117,17 +117,17 @@ SESSION_CONFIGS = [
         'app_sequence': ['Empathy_Beget_Guile'],
     },
     {
-        'name': 'participant_generate',
+        'name': 'participant_generated_urn_1',
         'display_name': 'Participant Generate Urn Game w/o Timer',
-        'num_demo_participants': 10,
-        'app_sequence': ['participant_generated_urn'],
+        'num_demo_participants': 8,
+        'app_sequence': ['participant_generated_urn_1'],
     },
-    {
-        'name': 'participant_generate',
-        'display_name': 'Participant Generate Urn Game w/ Timer',
-        'num_demo_participants': 10,
-        'app_sequence': ['participant_generated_urn_2'],
-    },
+    # {
+    #     'name': 'participant_generate_urn_2',
+    #     'display_name': 'Participant Generate Urn Game w/ Timer',
+    #     'num_demo_participants': 10,
+    #     'app_sequence': ['participant_generated_urn_2'],
+    # },
     {
         'name': 'erase',
         'display_name': 'Spotlight Effect',
@@ -169,6 +169,18 @@ SESSION_CONFIGS = [
         'display_name': 'Make Donations',
         'num_demo_participants': 2,
         'app_sequence': ['donation'],
+    },
+    {
+        'name': 'ambiguity_exp1',
+        'display_name': 'Ambiguity Experiment 1',
+        'num_demo_participants': 4,
+        'app_sequence': ['ambiguity_exp1'],
+    },
+    {
+        'name': 'ambiguity_exp2',
+        'display_name': 'Ambiguity Experiment 2',
+        'num_demo_participants': 10,
+        'app_sequence': ['ambiguity_exp2'],
     },
 
 ]

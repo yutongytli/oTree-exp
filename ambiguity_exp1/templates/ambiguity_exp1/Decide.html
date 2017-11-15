@@ -1,0 +1,17 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Your Decision
+{% endblock %}
+
+{% block content %}
+
+    {% include 'ambiguity_exp1/Instructions.html' %}
+
+    {% formfield player.decision with label='Which one will you pick?' %}
+
+    {% next_button %}
+
+
+{% endblock %}

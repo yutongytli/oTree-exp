@@ -1,0 +1,22 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Introduction
+{% endblock %}
+
+{% block content %}
+
+
+    {% include 'participant_generated_urn_1/Instructions_2.html' %}
+
+    <p>
+        <strong> The total number of balls in the urn is: {{ total }}</strong>
+    </p>
+
+
+
+    {% next_button %}
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Introduction
+{% endblock %}
+
+{% block content %}
+
+
+
+    {% include 'participant_generated_urn_1/Instructions.html' %}
+
+    <p>
+        <strong> The total number of balls in the urn is: {{ total }}</strong>
+    </p>
+
+    <p>
+        Now please first choose ↗ or ↖︎. This choice is irrelevant for you personally, but influences the contents of
+        urns for other participants.
+    </p>
+
+    {% formfield player.decision with label='Please choose one of the following balls to put in urns(not yours):' %}
+
+
+    {% next_button %}
+
+
+{% endblock %}
