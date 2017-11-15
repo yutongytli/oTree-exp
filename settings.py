@@ -107,13 +107,13 @@ SESSION_CONFIGS = [
         'app_sequence': ['REMT'],
     },
     {
-        'name': 'Empathy Game',
+        'name': 'Empathy',
         'display_name': 'Empathy Game w/o Timer',
         'num_demo_participants': 10,
         'app_sequence': ['Empathy_Beget_Guile'],
     },
     {
-        'name': 'Empathy Game Timmer',
+        'name': 'Empathy_Timmer',
         'display_name': 'Empathy Game w/ Timer',
         'num_demo_participants': 10,
         'app_sequence': ['Empathy_Beget_Guile_Timer'],
