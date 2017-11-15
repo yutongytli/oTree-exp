@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Your information
+{% endblock %}
+
+{% block content %}
+
+        <p>
+        Thank you for your donation!
+    </p>
+
+    {% formfield  player.email with label='Please enter your email to receive your donation receipt:'%}
+
+    {% next_button %}
+
+{% endblock %}
+
+

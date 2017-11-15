@@ -8,6 +8,10 @@ import otree.settings
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+CHANNEL_ROUTING = 'Empathy_Beget_Guile_Timer.routing.channel_routing'
+
+ROOT_URLCONF = 'redirect.urls'
+
 # the environment variable OTREE_PRODUCTION controls whether Django runs in
 # DEBUG mode. If OTREE_PRODUCTION==1, then DEBUG=False
 if environ.get('OTREE_PRODUCTION') not in {None, '', '0'}:
@@ -147,6 +151,18 @@ SESSION_CONFIGS = [
         'display_name': 'Audio Test',
         'num_demo_participants': 2,
         'app_sequence': ['covering_test'],
+    },
+    {
+        'name': 'petition',
+        'display_name': 'Sign a Petition',
+        'num_demo_participants': 2,
+        'app_sequence': ['petition'],
+    },
+    {
+        'name': 'donation',
+        'display_name': 'Make Donations',
+        'num_demo_participants': 2,
+        'app_sequence': ['donation'],
     },
 
 ]
