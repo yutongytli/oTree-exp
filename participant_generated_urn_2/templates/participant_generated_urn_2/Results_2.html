@@ -1,0 +1,132 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Your Result
+{% endblock %}
+
+{% block content %}
+    {% include 'participant_generated_urn_2/Instructions_2.html' %}
+    <p>
+        Result of the coin flip: <strong>{{ group.coin }}</strong>.
+    </p>
+
+    <p>
+        Your urn is filled with <strong>{{ group.a }}</strong> balls with symbol <strong>{{ htmla }}</strong>, and <strong>{{ group.b }}</strong>
+        balls with symbol <strong>{{ htmlb }}</strong>
+    </p>
+    <p>
+        The ball drawn from this urn is: <strong>{{ result }}</strong>
+    </p>
+    <p>
+        Your bet is: <strong>Option {{player.option}}</strong>
+    </p>
+
+    {% if player.option == 1 %}
+
+    <div class="row">
+        <div class="col-md-7 col-md-offset-2">
+            <table class="table table-hover">
+                <tr>
+                    <th>Option 1</th>
+                    <th>Head</th>
+                    <th>Tail</th>
+                </tr>
+                <tr>
+                    <th>{{ htmla }}</th>
+                    <td>$0.00</td>
+                    <td>$1.00</td>
+                </tr>
+                <tr>
+                    <th>{{ htmlb }}</th>
+                    <td>$0.00</td>
+                    <td>$1.00</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    {% elif player.option == 2 %}
+
+    <div class="row">
+        <div class="col-md-7 col-md-offset-2">
+            <table class="table table-hover">
+                <tr>
+                    <th>Option 2</th>
+                    <th>Head</th>
+                    <th>Tail</th>
+                </tr>
+                <tr>
+                    <th>{{ htmla }}</th>
+                    <td>$1.00</td>
+                    <td>$0.00</td>
+                </tr>
+                <tr>
+                    <th>{{ htmlb }}</th>
+                    <td>$1.00</td>
+                    <td>$0.00</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    {% elif player.option == 3 %}
+
+    <div class="row">
+        <div class="col-md-7 col-md-offset-2">
+            <table class="table table-hover">
+                <tr>
+                    <th>Option 3</th>
+                    <th>Head</th>
+                    <th>Tail</th>
+                </tr>
+                <tr>
+                    <th>{{ htmla }}</th>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                </tr>
+                <tr>
+                    <th>{{ htmlb }}</th>
+                    <td>$1.00</td>
+                    <td>$1.00</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    {% else %}
+
+    <div class="row">
+        <div class="col-md-7 col-md-offset-2">
+            <table class="table table-hover">
+                <tr>
+                    <th>Option 4</th>
+                    <th>Head</th>
+                    <th>Tail</th>
+                </tr>
+                <tr>
+                    <th>{{ htmla }}</th>
+                    <td>$1.00</td>
+                    <td>$1.00</td>
+                </tr>
+                <tr>
+                    <th>{{ htmlb }}</th>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    {% endif %}
+    <p>
+        Your payoff is: <strong>{{ player.payoff }}</strong>.
+    </p>
+    <p>
+        Your compensation for waiting time is: <strong>{{ comp }} cents</strong>
+    </p>
+    <p>
+        Thank you for your participation!
+    </p>
+    {% next_button %}
+{% endblock %}

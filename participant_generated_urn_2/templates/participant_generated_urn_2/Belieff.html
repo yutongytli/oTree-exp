@@ -1,0 +1,21 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Your Belief about Your Urn
+{% endblock %}
+
+{% block content %}
+
+    {% include 'participant_generated_urn_2/Instructions.html' %}
+
+    <p>
+        The total number of the balls in your urns is: <strong>{{ sum }}</strong>.
+    </p>
+
+    {% formfield player.belief with label='Which balls do you believe did others participants put into your urn?' %}
+
+    {% next_button %}
+
+
+{% endblock %}

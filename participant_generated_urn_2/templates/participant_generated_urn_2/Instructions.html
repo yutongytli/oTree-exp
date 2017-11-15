@@ -1,0 +1,25 @@
+{% load otree_tags staticfiles %}
+
+<div class="instructions well well-lg">
+
+    <h3 class="panel-sub-heading">
+        Instructions
+    </h3>
+    <p>
+        In this experiment you can bet on the result of one coin flip and one ball drawn from an urn. The two bets differ
+        as follows:
+    </p>
+
+    <p>
+        A standard coin with "Heads" and "Tails" will be thrown randomly by the computer.
+        "Heads" and "Tails" are equally likely. It is impossible that a coin lands on its edge.
+    </p>
+
+    <p>
+        A ball with specific symbol will be drawn from an urn. The contents of the urn are decided as follows: <br>
+        First, each participant in your group chooses a ball with symbol (either "{{ htmla }}" or "{{ htmlb }}") to put in the urn. The contents
+        of this virtual urn are determined by what symbol the other subjects chose. The only information
+        you have at this stage is the total number of balls in your urn as shown below.
+    </p>
+</div>
+

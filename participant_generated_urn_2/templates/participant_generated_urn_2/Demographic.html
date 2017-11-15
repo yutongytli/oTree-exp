@@ -1,0 +1,34 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Completion Page
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Please answer the following questions.
+    </p>
+
+    {% formfield player.citizenship with label='What is your country of citizenship' %}
+
+    {% formfield player.language with label='What is your mother tongue (native language)' %}
+
+    {% formfield player.age with label='What is your age' %}
+
+    {% formfield player.gender with label='What is your gender' %}
+
+    {% formfield player.educ with label='What is the highest level of school you have completed or the highest degree you have received? '%}
+
+    {% formfield player.time with label='How many times have you participated in experiments before today' %}
+
+    {% formfield player.religion with label='What is your religion?' %}
+
+    {% formfield player.income with label='Total annual household income' %}
+
+
+
+    {% next_button %}
+
+{% endblock %}

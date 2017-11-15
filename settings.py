@@ -117,10 +117,16 @@ SESSION_CONFIGS = [
         'app_sequence': ['Empathy_Beget_Guile'],
     },
     {
-        'name': 'Empathy_Timmer',
-        'display_name': 'Empathy Game w/ Timer',
+        'name': 'participant_generate',
+        'display_name': 'Participant Generate Urn Game w/o Timer',
         'num_demo_participants': 10,
-        'app_sequence': ['Empathy_Beget_Guile_Timer'],
+        'app_sequence': ['participant_generate_urn'],
+    },
+    {
+        'name': 'participant_generate',
+        'display_name': 'Participant Generate Urn Game w/ Timer',
+        'num_demo_participants': 10,
+        'app_sequence': ['participant_generate_urn_2'],
     },
     {
         'name': 'erase',
