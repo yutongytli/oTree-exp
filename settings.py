@@ -117,7 +117,38 @@ SESSION_CONFIGS = [
         'display_name': 'Empathy Game w/ Timer',
         'num_demo_participants': 10,
         'app_sequence': ['Empathy_Beget_Guile_Timer'],
-    }
+    },
+    {
+        'name': 'erase',
+        'display_name': 'Spotlight Effect',
+        'num_demo_participants': 2,
+        'app_sequence': ['erase'],
+    },
+    {
+        'name': 'pilot',
+        'display_name': 'Who cares - Pilot',
+        'num_demo_participants': 2,
+        'app_sequence': ['pilot2_1', 'pilot2_2'],
+    },
+    {
+        'name': 'envelope',
+        'display_name': 'Envelope',
+        'num_demo_participants': 2,
+        'app_sequence': ['test_axiom'],
+    },
+    {
+        'name': 'trolley',
+        'display_name': 'Moral Trolley Problem',
+        'num_demo_participants': 2,
+        'app_sequence': ['trolley'],
+    },
+    {
+        'name': 'covering',
+        'display_name': 'Audio Test',
+        'num_demo_participants': 2,
+        'app_sequence': ['covering_test'],
+    },
+
 ]
 
 # anything you put after the below line will override
