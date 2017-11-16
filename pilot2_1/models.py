@@ -4,10 +4,11 @@ from otree.api import (
 )
 import random
 
-author = 'Your name here'
+author = 'Yutong LI'
 
 doc = """
-Your app description
+Reference:
+Who Cares? Measuring Policy Preferences in a Polarized Environment
 """
 
 

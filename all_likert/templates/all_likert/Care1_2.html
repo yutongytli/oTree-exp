@@ -1,0 +1,16 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Question 1-2
+{% endblock %}
+
+{% block content %}
+
+
+    {% formfield player.care1o with label='Which one do you care about the least?'%}
+
+
+    {% next_button %}
+
+{% endblock %}

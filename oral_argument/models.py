@@ -8,7 +8,8 @@ import random
 author = 'Yutong LI'
 
 doc = """
-Your app description
+Reference:
+Chen, Daniel L., and Martin Schonger. "Testing axiomatizations of ambiguity aversion." (2016).
 """
 
 

@@ -1,0 +1,14 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Question 10 of 10
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.submitted_answer_10 with label='Do you favor, oppose, or neither favor nor oppose the U.S. sending ground troops to fight Islamic militants, such as ISIS, in Iraq and Syria? ' %}
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Question 3 of 10
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.submitted_answer_3 with label='Some people have suggested placing new limits on foreign imports in order to protect American jobs. Others say that such limits would raise consumer prices and hurt American exports. Do you favor, oppose, or neither favor nor oppose placing new limits on imports?' %}
+
+    {% next_button %}
+
+{% endblock %}

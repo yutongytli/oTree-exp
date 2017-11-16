@@ -1,0 +1,16 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Question 1-1
+{% endblock %}
+
+{% block content %}
+
+
+    {% formfield player.care1f with label='In the previous questions, we have asked you about the following 10 issues. Which one do you care about the most?'%}
+
+
+    {% next_button %}
+
+{% endblock %}

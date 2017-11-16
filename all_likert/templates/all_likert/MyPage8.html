@@ -1,0 +1,14 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Question 8 of 10
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.submitted_answer_8 with label='Do you favor, oppose, or neither favor nor oppose the death penalty for persons convicted of murder? ' %}
+
+    {% next_button %}
+
+{% endblock %}

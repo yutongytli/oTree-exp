@@ -1,0 +1,14 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Question 9 of 10
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.submitted_answer_9 with label='Do you favor, oppose, or neither favor nor oppose laws to protect gays and lesbians against job discrimination? ' %}
+
+    {% next_button %}
+
+{% endblock %}

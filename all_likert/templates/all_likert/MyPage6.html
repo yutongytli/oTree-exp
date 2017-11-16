@@ -1,0 +1,14 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Question 6 of 10
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.submitted_answer_6 with label='Do you favor, oppose, or neither favor nor oppose building a wall on the U.S. border with Mexico? ' %}
+
+    {% next_button %}
+
+{% endblock %}

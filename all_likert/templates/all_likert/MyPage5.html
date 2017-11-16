@@ -1,0 +1,14 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Question 5 of 10
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.submitted_answer_5 with label='Do you favor, oppose, or neither favor nor oppose requiring employers to offer paid leave to parents of new children? ' %}
+
+    {% next_button %}
+
+{% endblock %}

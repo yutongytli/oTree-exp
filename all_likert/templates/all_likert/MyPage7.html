@@ -1,0 +1,14 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Question 7 of 10
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.submitted_answer_7 with label='Some people have proposed that the U.S. Constitution should be changed so that the children of unauthorized immigrants do not automatically get citizenship if they are born in this country. Do you favor, oppose, or neither favor nor oppose this proposal? ' %}
+
+    {% next_button %}
+
+{% endblock %}

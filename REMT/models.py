@@ -5,7 +5,7 @@ from otree.api import (
 import csv
 import random
 
-author = 'Yutong Li'
+author = 'Yutong LI'
 
 doc = """
 Your app description

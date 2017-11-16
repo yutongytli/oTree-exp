@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Question 6-2-2 of 10
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        <strong>How important is this issue to you personally? </strong>
+    </p>
+
+        <table class="table table-hover">
+
+        <tr>
+            {% for name in names %}
+            <td width="10%" align="center">{{ name }}</td>
+            {% endfor %}
+        </tr>
+
+        <tr>
+            {% for value in values %}
+        <td width="10%" align="center">
+            <input type="radio" name='important_6' value={{ value }}></td>
+            {% endfor %}
+        </tr>
+        </table>
+
+
+    {% next_button %}
+
+{% endblock %}
+
+
+
+
+

@@ -139,31 +139,31 @@ SESSION_CONFIGS = [
     },
     {
         'name': 'erase_old',
-        'display_name': 'Mouse Eraser',
+        'display_name': 'Who Cares - Mouse Eraser',
         'num_demo_participants': 2,
         'app_sequence': ['erase_old'],
     },
     {
         'name': 'erase',
-        'display_name': 'Mouse Spotlight',
+        'display_name': 'Who Cares - Mouse Spotlight',
         'num_demo_participants': 2,
         'app_sequence': ['erase'],
     },
     {
         'name': 'pilot1',
-        'display_name': 'Who cares - Pilot 1',
+        'display_name': 'Who Cares - Pilot 1',
         'num_demo_participants': 2,
         'app_sequence': ['pilot2_1'],
     },
     {
         'name': 'pilot2',
-        'display_name': 'Who cares - Pilot 2',
+        'display_name': 'Who Cares - Pilot 2',
         'num_demo_participants': 2,
         'app_sequence': ['pilot2_2'],
     },
     {
         'name': 'envelope',
-        'display_name': 'Envelope',
+        'display_name': 'Testing Axiomatizations of Ambiguity Aversion',
         'num_demo_participants': 2,
         'app_sequence': ['test_axiom'],
     },
@@ -181,13 +181,13 @@ SESSION_CONFIGS = [
     },
     {
         'name': 'petition',
-        'display_name': 'Sign a Petition',
+        'display_name': 'Who Cares - Petition',
         'num_demo_participants': 2,
         'app_sequence': ['petition'],
     },
     {
         'name': 'donation',
-        'display_name': 'Make Donations',
+        'display_name': 'Who Cares - Donations',
         'num_demo_participants': 2,
         'app_sequence': ['donation'],
     },
@@ -196,6 +196,12 @@ SESSION_CONFIGS = [
         'display_name': 'Mouse Tracking',
         'num_demo_participants': 1,
         'app_sequence': ['mouse_tracking'],
+    },
+    {
+        'name': 'all_likert',
+        'display_name': 'Who Cares - Likert Questions',
+        'num_demo_participants': 2,
+        'app_sequence': ['all_likert'],
     },
 
 ]
