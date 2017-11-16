@@ -8,20 +8,20 @@ import random
 class Welcome(Page):
 
     def before_next_page(self):
-        random.shuffle(Constants.first_two)
-        random.shuffle(Constants.questions)
-        self.participant.vars['q_1'] = Constants.first_two[0][1]
-        self.participant.vars['q_2'] = Constants.first_two[1][1]
-        self.participant.vars['q_3'] = Constants.questions[0][1]
-        self.participant.vars['q_4'] = Constants.questions[1][1]
-        self.participant.vars['q_5'] = Constants.questions[2][1]
-        self.participant.vars['q_6'] = Constants.questions[3][1]
-        self.player.question_1 = Constants.first_two[0][0]
-        self.player.question_2 = Constants.first_two[1][0]
-        self.player.question_3 = Constants.questions[0][0]
-        self.player.question_4 = Constants.questions[1][0]
-        self.player.question_5 = Constants.questions[2][0]
-        self.player.question_6 = Constants.questions[3][0]
+        first_two = random.sample(Constants.first_two, 2)
+        questions = random.sample(Constants.questions, 4)
+        self.participant.vars['q_1'] = first_two[0][1]
+        self.participant.vars['q_2'] = first_two[1][1]
+        self.participant.vars['q_3'] = questions[0][1]
+        self.participant.vars['q_4'] = questions[1][1]
+        self.participant.vars['q_5'] = questions[2][1]
+        self.participant.vars['q_6'] = questions[3][1]
+        self.player.question_1 = first_two[0][0]
+        self.player.question_2 = first_two[1][0]
+        self.player.question_3 = questions[0][0]
+        self.player.question_4 = questions[1][0]
+        self.player.question_5 = questions[2][0]
+        self.player.question_6 = questions[3][0]
 
 
 class Internet(Page):

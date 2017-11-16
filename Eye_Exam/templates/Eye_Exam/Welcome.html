@@ -1,0 +1,36 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        This activity is part of a study in decision-making. You will be grouped with another worker(your counterpart)
+        and you two will be asked to finish three tasks.
+    </p>
+    <p>
+        In the first task, you will be asked to transcribe a paragraph with a specific content. The data entry is to
+        ensure that you are human and not computers.
+    </p>
+    <p>
+        In the second task, you will be presented with 36 images of eyes. For each pair of eyes, choose which word best
+        describes what the person in the picture is thinking or feeling. <br>
+        <strong> You will be paid 80 cents for completing this task! </strong>
+    </p>
+    <p>
+        In the third task, you will be asked to participate in a Two-player Communication Game or answer two questions.<br>
+        <strong> You will be paid a certain amount of money according to your decision! </strong>
+    </p>
+
+    <p>
+        <strong><I>Please be patient to wait for your partner and complete all the tasks, otherwise your HIT will not be accepted and you will not be paid.</I></strong>
+    </p>
+
+
+    {% next_button %}
+
+{% endblock %}

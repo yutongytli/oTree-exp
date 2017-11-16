@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Page title
+{% endblock %}
+
+{% block content %}
+
+{#    <iframe src="https://www.feinstein.senate.gov/public/index.cfm/e-mail-me" vspace="-500" hspace="-800" scrolling="no" height="3000" width="100%" frameborder="0"></iframe>#}
+<div style="border: 1px solid;width:892px">
+
+    <div style="width:890px;height:2730px;overflow:hidden; border:0px">
+    <div style="width:1000px;height:2730px; margin-top:-70px; margin-bottom:-90px; margin-left: -40px; margin-right: -60px;">
+    <iframe src="https://www.feinstein.senate.gov/public/index.cfm/e-mail-me" width="960" height="3000" scrolling="no" security="restricted" sandbox=""></iframe>
+    </div>
+    </div>
+
+    <button class="webform-submit button-primary btn btn-primary form-submit" style="margin-left: 700px; margin-top: 10px; margin-bottom: 10px">Submit</button>
+
+</div>
+
+    <p>
+    If you do not want to contact this senator, click on the next button and move on to the next page.
+    </p>
+
+
+    {% next_button %}
+
+
+{% endblock %}
+
+

@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Task 2: Describe Eye Expression
+{% endblock %}
+
+{% block content %}
+
+    {% include 'Eye_Exam/Instructions.html' %}
+
+    {% next_button %}
+
+{% endblock %}

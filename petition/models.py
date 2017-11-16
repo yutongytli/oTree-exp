@@ -69,3 +69,7 @@ class Player(BasePlayer):
     email_petition = models.CharField(
         blank=True
     )
+
+    click = models.CharField(
+        blank=True
+    )

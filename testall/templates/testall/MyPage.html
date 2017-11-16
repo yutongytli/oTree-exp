@@ -1,0 +1,149 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Page title
+{% endblock %}
+
+{% block content %}
+
+{#	<img src="{% static "mouse_tracking/dinosaur.jpg" %}"/>#}
+    <div class='banner' bannerid='yyy' id="mydiv">
+        <iframe src="https://www.feinstein.senate.gov/public/index.cfm/e-mail-me" width="1000" height="3000" id="myframe" name="myframe"></iframe>
+    </div>
+
+	<button class="btn btn-danger" onclick="stopCount();">Next</button>
+
+	<input type="hidden" name="mouse_x" value="" id="mouse_x"/>
+    <input type="hidden" name="mouse_y" value="" id="mouse_y"/>
+    <input type="hidden" name="mouse_t" value="" id="mouse_t"/>
+
+{% endblock %}
+
+{% block style %}
+
+    <style type="text/css">
+
+
+    </style>
+{% endblock %}
+
+{% block scripts %}
+
+	<script>
+{#        document.onmousemove = getMousePosition; //set document to record mouse position#}
+{##}
+{#		//initialize arrays#}
+{#		var delayedXPos = new Array();#}
+{#		var delayedYPos = new Array();#}
+{#		var delayedTime = new Array();#}
+{##}
+{#		var xPos = new Array();#}
+{#		var yPos = new Array();#}
+{##}
+{#		//initialize time variables#}
+{#		var initTime = new Date().getTime();#}
+{#		var timer_is_on = 0;#}
+{#		var t;#}
+{##}
+{#		//time interval for data collection in ms#}
+{#		var dt = 10;#}
+{##}
+{#		//flag signaling whether getMousePosition has been called#}
+{#		mp_called = 0;#}
+{##}
+{#		//function that determines action when mouse moves#}
+{#		function getMousePosition(mp)#}
+{#		{#}
+{#			var divPos = getPosition(document.getElementById("mydiv"));#}
+{#			xPos.push(mp.pageX - divPos[0]);#}
+{#			yPos.push(mp.pageY - divPos[1]);#}
+{#			mp_called = 1;#}
+{#			return true;#}
+{#		}#}
+{##}
+{#		function timedCount()#}
+{#		{#}
+{#		if(mp_called){#}
+{#		 	delayedXPos.push(xPos[xPos.length-1]);#}
+{#		 	delayedYPos.push(yPos[yPos.length-1]);#}
+{#		 	var timeInSec = (new Date().getTime()-initTime) / 1000.;#}
+{#		 	delayedTime.push(timeInSec);#}
+{#		}#}
+{#			t=setTimeout("timedCount()",dt);#}
+{#		}#}
+{##}
+{#		function doTimer()#}
+{#		{#}
+{#		   if (!timer_is_on)#}
+{#		   {#}
+{#		    initTime = new Date().getTime();#}
+{#		    timer_is_on=1;#}
+{#		    timedCount();#}
+{#		   }#}
+{#		}#}
+{##}
+{#		function stopCount()#}
+{#		{#}
+{#		    clearTimeout(t);#}
+{#		    timer_is_on=0;#}
+{##}
+{#		    document.getElementById('mouse_x').value = delayedXPos.join();#}
+{#		    document.getElementById('mouse_y').value = delayedYPos.join();#}
+{#		    document.getElementById('mouse_t').value = delayedTime.join();#}
+{#		}#}
+{##}
+{##}
+{#		function getPosition(obj){#}
+{##}
+{#		var topValue= 0,leftValue= 0;#}
+{##}
+{#		while(obj)#}
+{#		{#}
+{#		    leftValue+= obj.offsetLeft;#}
+{#			topValue+= obj.offsetTop;#}
+{#			obj= obj.offsetParent;#}
+{#		}#}
+{##}
+{#		return [leftValue, topValue];#}
+{#		}#}
+{##}
+{#		//start collecting data after page loads#}
+{#		document.onload = doTimer();#}
+
+		var xPos = new Array();
+		var yPos = new Array();
+
+    $(document).ready( function() {
+    var overiFrame = -1;
+    $('iframe').hover( function() {
+        overiFrame = $(this).closest('.banner').attr('bannerid');
+    }, function() {
+        overiFrame = -1
+    });
+
+        $(window).blur( function() {
+        if( overiFrame != -1 ){
+            var offset = $("#mydiv").offset();
+            $(document).mousemove(function(e){
+            xPos.push(e.pageX - offset.left);
+            yPos.push(e.pageY - offset.top);
+{#        $.post('log.php', {id:overiFrame}); /* example, do your stats here */#}
+
+});}
+
+    });});
+
+    		function stopCount()
+		{
+{#		    clearTimeout(t);#}
+{#		    timer_is_on=0;#}
+
+		    document.getElementById('mouse_x').value = xPos.join();
+		    document.getElementById('mouse_y').value = yPos.join();
+{#		    document.getElementById('mouse_t').value = delayedTime.join();#}
+		}
+
+    </script>
+
+{% endblock %}

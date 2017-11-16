@@ -24,7 +24,7 @@
 
             <tr><td width="30%" align="left">{{ question }}</td>
             <td width="5%" align="center">
-                <a href="{{ link }}" target=_blank>Link</a>
+                <a href="{{ link }}" target=_blank id="submit">Link</a>
             </td>
             </tr>
 
@@ -36,7 +36,26 @@
         <strong><I>If you are not interested, please move to the next page.</I></strong>
     </p>
 
+        <input type="hidden" name="click" value="" id="click"/>
+
+
     {% next_button %}
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+
+    var second = document.getElementById("submit");
+
+    second.onclick = function () {
+{#        second.style.display="none";#}
+        document.getElementById('click').value = "Yes";
+    }
+
+    </script>
+
+
+
 {% endblock %}
 
 

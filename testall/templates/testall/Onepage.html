@@ -1,0 +1,50 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Page title
+{% endblock %}
+
+{% block content %}
+
+    <div style="position: relative; width: 1000px; height: 3000px;">
+    <iframe style="position: absolute;" src="https://www.feinstein.senate.gov/public/index.cfm/e-mail-me" width="1000" height="3000" scrolling="no"></iframe>
+    <div id="second" style="position: absolute; left: 75px; top: 2490px; width: 70px; height: 40px;">
+    </div>
+    <div id="third" style="position: absolute; left: 75px; top: 2350px; width: 70px; height: 20px;">
+        <textarea id="textarea" cols="30" rows="5" style="width: 850px; height: 70px;" ></textarea>
+    </div>
+    </div>
+    <p>
+    <br>
+    </p>
+
+    <input type="hidden" name="submit" value="" id="submit"/>
+    <input type="hidden" name="text" value="" id="text"/>
+
+    <button id="next" class="btn btn-danger">Next</button>
+
+
+{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+
+    var second = document.getElementById("second");
+
+    second.onclick = function () {
+        second.style.display="none";
+        document.getElementById('submit').value = "Clicked";
+        document.getElementById('text').value = document.getElementById('textarea').value;
+        document.getElementById('next').click()
+    }
+
+    </script>
+
+
+
+{% endblock %}

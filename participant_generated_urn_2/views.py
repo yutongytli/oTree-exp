@@ -4,6 +4,7 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 import random
 import time
+from otree_mturk_utils.views import CustomMturkPage, CustomMturkWaitPage
 
 # class Decide(Page):
 #     form_model = models.Player
@@ -162,7 +163,7 @@ class Decide2(Page):
 
 
 class ResultsWaitPage(WaitPage):
-    template_name = 'participant_generated_urn_2/CustomWaitPage.html'
+    # template_name = 'participant_generated_urn_2/CustomWaitPage.html'
 
     def after_all_players_arrive(self):
         self.group.set_payoffs()
@@ -354,9 +355,9 @@ class Results(Page):
         return self.player.treatment == 'Participant'
 
 
-class FirstWait(WaitPage):
+class FirstWait(CustomMturkWaitPage):
     group_by_arrival_time = True
-    template_name = 'participant_generated_urn_2/CustomWaitPage.html'
+    # template_name = 'participant_generated_urn_2/CustomWaitPage.html'
 
     def after_all_players_arrive(self):
         # Retrieve the condition assignments from each participant so far

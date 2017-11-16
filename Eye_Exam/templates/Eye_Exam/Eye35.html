@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+{% load staticfiles %}
+
+{% block title %}
+    Task 2: Describe Eye Expression 35/36
+{% endblock %}
+
+{% block content %}
+
+    {% include 'Eye_Exam/Instructions.html' %}
+
+    <p>Please look at the following image:</p>
+    <img src="{% static "Eye_Exam/eye35.png" %}"/>
+
+    {% formfield player.feeling35_response with label='Which word best describes what the person is thinking or feeling?' %}
+
+    {% next_button %}
+
+{% endblock %}

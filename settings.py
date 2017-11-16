@@ -8,7 +8,7 @@ import otree.settings
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-CHANNEL_ROUTING = 'Empathy_Beget_Guile_Timer.routing.channel_routing'
+CHANNEL_ROUTING = 'participant_generated_urn_2.routing.channel_routing'
 
 # ROOT_URLCONF = 'redirect.urls'
 
@@ -68,7 +68,10 @@ USE_POINTS = False
 LANGUAGE_CODE = 'en'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
-INSTALLED_APPS = ['otree']
+INSTALLED_APPS = [
+    'otree',
+    'otree_mturk_utils',
+]
 
 # SENTRY_DSN = ''
 
@@ -105,9 +108,15 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
+        'name': 'Eye_Exam',
+        'display_name': 'Read Eyes in Mind Test',
+        'num_demo_participants': 5,
+        'app_sequence': ['Eye_Exam'],
+    },
+    {
         'name': 'REMT',
         'display_name': 'Read Eyes in Mind Test (with scrambled pic)',
-        'num_demo_participants': 10,
+        'num_demo_participants': 5,
         'app_sequence': ['REMT'],
     },
     {
@@ -122,23 +131,35 @@ SESSION_CONFIGS = [
         'num_demo_participants': 8,
         'app_sequence': ['participant_generated_urn_1'],
     },
-    # {
-    #     'name': 'participant_generate_urn_2',
-    #     'display_name': 'Participant Generate Urn Game w/ Timer',
-    #     'num_demo_participants': 10,
-    #     'app_sequence': ['participant_generated_urn_2'],
-    # },
+    {
+        'name': 'participant_generate_urn_2',
+        'display_name': 'Participant Generate Urn Game w/ Timer',
+        'num_demo_participants': 10,
+        'app_sequence': ['participant_generated_urn_2'],
+    },
+    {
+        'name': 'erase_old',
+        'display_name': 'Mouse Eraser',
+        'num_demo_participants': 2,
+        'app_sequence': ['erase_old'],
+    },
     {
         'name': 'erase',
-        'display_name': 'Spotlight Effect',
+        'display_name': 'Mouse Spotlight',
         'num_demo_participants': 2,
         'app_sequence': ['erase'],
     },
     {
-        'name': 'pilot',
-        'display_name': 'Who cares - Pilot',
+        'name': 'pilot1',
+        'display_name': 'Who cares - Pilot 1',
         'num_demo_participants': 2,
-        'app_sequence': ['pilot2_1', 'pilot2_2'],
+        'app_sequence': ['pilot2_1'],
+    },
+    {
+        'name': 'pilot2',
+        'display_name': 'Who cares - Pilot 2',
+        'num_demo_participants': 2,
+        'app_sequence': ['pilot2_2'],
     },
     {
         'name': 'envelope',
@@ -153,10 +174,10 @@ SESSION_CONFIGS = [
         'app_sequence': ['trolley'],
     },
     {
-        'name': 'covering',
-        'display_name': 'Audio Test',
+        'name': 'oral_argument',
+        'display_name': 'Oral Argument',
         'num_demo_participants': 2,
-        'app_sequence': ['covering_test'],
+        'app_sequence': ['oral_argument'],
     },
     {
         'name': 'petition',
@@ -171,16 +192,10 @@ SESSION_CONFIGS = [
         'app_sequence': ['donation'],
     },
     {
-        'name': 'ambiguity_exp1',
-        'display_name': 'Ambiguity Experiment 1',
-        'num_demo_participants': 4,
-        'app_sequence': ['ambiguity_exp1'],
-    },
-    {
-        'name': 'ambiguity_exp2',
-        'display_name': 'Ambiguity Experiment 2',
-        'num_demo_participants': 10,
-        'app_sequence': ['ambiguity_exp2'],
+        'name': 'mouse_tracking',
+        'display_name': 'Mouse Tracking',
+        'num_demo_participants': 1,
+        'app_sequence': ['mouse_tracking'],
     },
 
 ]

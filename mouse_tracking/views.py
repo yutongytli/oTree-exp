@@ -32,5 +32,5 @@ class Results(Page):
 
 page_sequence = [
     TrackMouse,
-    # Results
+    Results
 ]

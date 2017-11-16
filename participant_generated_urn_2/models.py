@@ -4,10 +4,14 @@ from otree.api import (
 )
 import random
 
-author = 'Your name here'
+author = 'Yutong LI'
 
 doc = """
-Your app description
+Reference:
+Chen, Daniel L., and Martin Schonger. "Is Ambiguity Aversion a Preference?." (2016).
+
+Wait Page Package:
+https://github.com/chapkovski/custom-waiting-page-for-mturk
 """
 
 

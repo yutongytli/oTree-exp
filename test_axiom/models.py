@@ -4,10 +4,12 @@ from otree.api import (
 )
 
 
-author = 'Your name here'
+author = 'Yutong LI'
 
 doc = """
-Your app description
+Reference:
+Chen, Daniel, Yosh Halberstam, and Alan Yu. Covering: Mutable characteristics and perceptions of
+voice in the US Supreme Court. No. 16-680. Toulouse School of Economics (TSE), 2016.
 """
 
 

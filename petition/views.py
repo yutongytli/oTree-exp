@@ -20,7 +20,6 @@ class MyPagepetition(Page):
                   'Send troops to fight ISIS']
         attitude = []
 
-# 为了给老师看
 #         for i in range(1, 11):
 #             attitude.append(self.participant.vars['opinion_%s' % i])
 
@@ -75,6 +74,9 @@ class MyPage2(Page):
 
 
 class Resultspetition(Page):
+    form_model = models.Player
+    form_fields = ['click']
+
     def vars_for_template(self):
         question = ['Reduce the difference in income', 'Pay women and men the same amount for the same work',
                     'Limit imports', 'Increase number of black students at universities', 'Paid leave for parents of new children',
@@ -110,7 +112,6 @@ class Resultspetition(Page):
 
         return {'list': mylist}
 
-# 为了给老师看
     # def is_displayed(self):
     #     return self.participant.vars['group'] == '1LP' or self.participant.vars['group'] == '1QP' or \
     #            self.participant.vars['group'] == '1QNP' or self.participant.vars['group'] == '2LP' or \
