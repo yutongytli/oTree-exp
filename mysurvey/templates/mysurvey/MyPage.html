@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Please, complete the following survey.
+{% endblock %}
+
+{% block content %}
+    <p>
+        Remember that this information is completely anonymous.
+
+         {% formfield player.gender label="Your gender is:" %}
+         {% formfield player.age label="Your year of birth is:" %}
+         {% formfield player.is_student label="Are you a student?"%}
+         {% formfield player.level label="Which is the maximum certificated you reached (or international equivalent):" %}
+         {% formfield player.income label="Which of the following mensual income intervals does your household fits:"%}
+
+
+    </p>
+    {% next_button %}
+
+{% endblock %}

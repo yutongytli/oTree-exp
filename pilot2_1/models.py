@@ -91,3 +91,17 @@ class Player(BasePlayer):
     partisan_1 = models.IntegerField()
     partisan_2 = models.IntegerField()
 
+    def set_payoff(self):
+
+        payoff_matrix = {
+            True:
+                {
+                    True: Constants.both_cooperate_payoff,
+                    False: Constants.betrayed_payoff
+                },
+            False:
+                {
+                    True: Constants.betray_payoff,
+                    False: Constants.both_defect_payoff
+                }
+        }
