@@ -8,6 +8,7 @@ class Decide(Page):
     form_model = models.Player
     form_fields = ['decision']
 
+
 class Decide2(Page):
 
     form_model = models.Player
@@ -25,12 +26,14 @@ class Results(Page):
     def is_displayed(self):
         return self.player.treatment == 'Participant'
 
+
 class FirstWait(WaitPage):
     group_by_arrival_time = True
     players_per_group = 8
 
     def after_all_players_arrive(self):
         self.group.set_treatment()
+
 
 class Introduction(Page):
     form_model = models.Player
@@ -42,6 +45,7 @@ class Introduction(Page):
     def is_displayed(self):
         return self.player.treatment == 'Participant'
 
+
 class Decide_exp(Page):
 
     form_model = models.Player
@@ -50,10 +54,12 @@ class Decide_exp(Page):
     def is_displayed(self):
         return self.player.treatment == 'Experimenter'
 
+
 class Results_2(Page):
 
     def is_displayed(self):
         return self.player.treatment == 'Experimenter'
+
 
 class Introduction_2(Page):
 
@@ -62,6 +68,7 @@ class Introduction_2(Page):
 
     def vars_for_template(self):
         return {'total': self.group.num_of_par - 1}
+
 
 class belief(Page):
     form_model = models.Player
@@ -72,6 +79,7 @@ class belief(Page):
 
     def is_displayed(self):
         return self.player.treatment == 'Participant'
+
 
 page_sequence = [
     FirstWait,

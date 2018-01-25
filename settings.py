@@ -177,12 +177,12 @@ SESSION_CONFIGS = [
     #     'num_demo_participants': 2,
     #     'app_sequence': ['trolley'],
     # },
-    # {
-    #     'name': 'oral_argument',
-    #     'display_name': 'Oral Argument',
-    #     'num_demo_participants': 2,
-    #     'app_sequence': ['oral_argument'],
-    # },
+    {
+        'name': 'oral_argument',
+        'display_name': 'Oral Argument',
+        'num_demo_participants': 2,
+        'app_sequence': ['oral_argument'],
+    },
     # {
     #     'name': 'petition',
     #     'display_name': 'Who Cares - Petition',
