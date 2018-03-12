@@ -21,7 +21,7 @@ CHANNEL_ROUTING = 'participant_generated_urn_2.routing.channel_routing'
 
 # OTREE_PRODUCTION = "1"
 
-DEBUG = False
+DEBUG = True
 
 ADMIN_USERNAME = 'admin'
 
@@ -74,7 +74,7 @@ LANGUAGE_CODE = 'en'
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
 INSTALLED_APPS = [
     'otree',
-    'otree_mturk_utils',
+    # 'otree_mturk_utils',
 ]
 
 # SENTRY_DSN = ''
@@ -219,12 +219,12 @@ SESSION_CONFIGS = [
     #     'num_demo_participants': 10,
     #     'app_sequence': ['prisoner'],
     # },
-    {
-        'name': 'experiment',
-        'display_name': 'experiment',
-        'num_demo_participants': 10,
-        'app_sequence': ['prisoner', 'mysurvey'],
-    },
+    # {
+    #     'name': 'experiment',
+    #     'display_name': 'experiment',
+    #     'num_demo_participants': 10,
+    #     'app_sequence': ['prisoner', 'mysurvey'],
+    # },
 
 ]
 

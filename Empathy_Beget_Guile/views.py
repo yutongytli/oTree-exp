@@ -50,7 +50,6 @@ class ResultsWaitPage(WaitPage):
         return self.player.is_4 == 0
 
 
-
 class Player1(Page):
     form_model = models.Player
     form_fields = ['message']
